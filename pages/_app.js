@@ -14,7 +14,7 @@ export default function MyApp(props) {
     return (
         <Fragment>
             <Head>
-                <title>My page</title>
+                <title>OMI CALL</title>
                 <meta name='viewport' content='initial-scale=1, width=device-width' />
             </Head>
             <ThemeProvider theme={theme}>

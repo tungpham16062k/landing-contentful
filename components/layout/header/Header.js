@@ -1,24 +1,31 @@
 import React from 'react';
+import compose from 'recompose/compose';
+import classNames from 'classnames';
 
 import withI18n from '@hocs/I18nHocs';
 
 import { pushRoute } from '@utils/RouterUtils';
 
-import { useStyle } from './styles';
+import { withStyles } from '@mui/styles';
+import { styles } from './styles';
 
-import { TextButton } from '@components/common';
+import { ImageViewer, TextButton } from '@components/common';
 import { toggleWebLanguage } from '@utils/WebUtils';
 
 const menus = [
     { id: 'introduce', text: 'introduce', target: 'push' },
     { id: 'omi-call', text: 'OMICall', target: 'push' },
     { id: 'pricing', text: 'pricing', target: 'push' },
-    { id: 'https://api.omicall.com/', text: 'API Docs', target: 'new' },
+    { id: 'https://api.omicall.com/', text: 'API DOCS', target: 'new' },
     { id: 'https://docs.omicrm.com/', text: 'document', target: 'new' },
 ];
 
-function Header({ i18n }) {
-    const classes = useStyle();
+const icons = {
+    logo: require('@assets/images/logo/logo.png'),
+    vietnam: require('@assets/images/national/vietnam1.png'),
+}
+
+const Header = ({ classes, i18n }) => {
 
     const handleClick = (...args) => e => {
         const [cType, cValue] = args;
@@ -35,9 +42,13 @@ function Header({ i18n }) {
 
     return (
         <div className={classes.wrapper}>
-            <div className={classes.container}>
-                <div className={classes.logo} onClick={handleClick('go2Home')}>
-                    Logo
+            <div className={classes.containers}>
+                <div className={classes.boxLogo} onClick={handleClick('go2Home')}>
+                    <div><ImageViewer src={icons.logo} size={48} /></div>
+                    <div>
+                        <div>{i18n.t('OMICRM')}</div>
+                        <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
+                    </div>
                 </div>
                 <div className={classes.nav}>
                     {menus.map(item => (
@@ -51,7 +62,10 @@ function Header({ i18n }) {
                             target={item.target}
                         />
                     ))}
-                    <TextButton
+                    <div className={classNames(classes.btn, 'bgGreen')}>Đăng ký</div>
+                    <div className={classNames(classes.btn)}>Đăng nhập</div>
+                    <div><ImageViewer src={icons.vietnam} style={{ height: 20, marginLeft: 24 }} /></div>
+                    {/* <TextButton
                         noUnderline
                         className={classes.menuItem}
                         color={'white'}
@@ -64,11 +78,11 @@ function Header({ i18n }) {
                         color={'white'}
                         text={'EN'}
                         onClick={handleClick('toggleLng', 'en')}
-                    />
+                    /> */}
                 </div>
             </div>
         </div>
     )
 }
 
-export default withI18n('common')(Header);
+export default compose(withI18n(), withStyles(styles))(Header);

@@ -1,20 +1,21 @@
 import React from 'react';
 
-import { useStyle } from './styles';
+import { withStyles } from '@mui/styles';
+import { styles } from './styles';
 
 import Header from './header';
 import Footer from './footer';
 
-function Layout(props) {
-    const { children } = props;
-    const classes = useStyle();
+const Layout = ({ classes, children }) => {
     return (
         <div className={classes.wrapper}>
             <Header />
-            {children}
-            <Footer />
+            <div className={classes.boxContent}>
+                {children}
+                {/* <Footer /> */}
+            </div>
         </div>
     )
 }
 
-export default Layout;
+export default withStyles(styles)(Layout);
