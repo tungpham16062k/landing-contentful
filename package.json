@@ -1,0 +1,45 @@
+{
+  "name": "omi-web-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 7071",
+    "build": "next build",
+    "start": "next start -p 7071",
+    "prod": "next build && next start -p 7071",
+    "analyze": "ANALYZE=true next build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@moxy/next-common-files": "^2.0.0",
+    "@mui/material": "^5.0.6",
+    "@mui/styles": "^5.0.2",
+    "@next/bundle-analyzer": "^12.0.1",
+    "anchorme": "^2.1.2",
+    "axios": "^0.24.0",
+    "better-react-spinkit": "^2.0.4",
+    "classnames": "^2.3.1",
+    "crypto-js": "^4.1.1",
+    "date-fns": "^2.25.0",
+    "glamor": "^2.20.40",
+    "js-base64": "^3.7.2",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "next": "12.0.1",
+    "next-compose-plugins": "^2.2.1",
+    "next-routes": "^1.4.2",
+    "numeral": "^2.0.6",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-fast-compare": "^3.2.0",
+    "react-svg": "^14.0.17",
+    "react-toastify": "^8.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.61.0"
+  }
+}
