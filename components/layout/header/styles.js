@@ -34,14 +34,16 @@ export const styles = theme => {
         boxLogo: {
             display: 'flex',
             alignItems: 'center',
+            position: 'relative',
+            left: -10,
             '&>:last-child': {
-                marginLeft: 16,
+                // marginLeft: 16,
                 '&>:first-child': {
-                    fontWeight: fontWeights.bold,
-                    color: common.white,
                 },
                 '&>:last-child': {
+                    marginTop: 4,
                     opacity: 0.5,
+                    fontSize: 12,
                 },
             },
         },

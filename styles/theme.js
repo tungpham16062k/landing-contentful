@@ -1,6 +1,6 @@
 // 4px, 8px, 12px, 16px, 24px, 32px, 48px, 56px,...
 
-import { createTheme, alpha } from '@mui/material';
+import { createTheme, alpha as toRgbA } from '@mui/material';
 
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -320,7 +320,7 @@ const theme = createTheme({
         ].map(([colorValue, colorName]) => [colorName, {
             main: colorValue,
             ...Object.fromEntries(Array.from({ length: 9 }).map((_, index) => [
-                `${index + 1}00`, alpha(colorValue, (index + 1) / 10)
+                `${index + 1}00`, toRgbA(colorValue, (index + 1) / 10)
             ])),
         }])),
         text: {

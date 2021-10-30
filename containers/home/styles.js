@@ -9,33 +9,25 @@ export const styles = theme => {
         wrapper: {
             width: '100%',
             height: '100%',
-            // backgroundColor: primary.main,
-            // height: 80,
-            // color: common.white,
-            // backgroundColor: primary.main,
-            // display: 'flex',
-            // justifyContent: 'center',
-            // position: 'fixed',
-            // top: 0,
-            // left: 0,
         },
-
-
 
         container: {
             width: 1166,
             height: 'auto',
             boxSizing: 'border-box',
-            margin: '0 24px',
+            margin: '0 auto',
+            [theme.breakpoints.down('lg')]: {
+                margin: '0 24px',
+            },
         },
 
-
+        //One
         boxSecOne: {
             display: 'flex',
             justifyContent: 'center',
             width: '100%',
             height: 688,
-            marginTop: 96,
+            paddingTop: 96,
             backgroundColor: primary.main,
             overflow: 'hidden',
         },
@@ -43,7 +35,7 @@ export const styles = theme => {
             color: common.white,
             '&>:first-child': {
                 fontSize: 32,
-                fontWeight: fontWeights,
+                fontWeight: fontWeights.bold,
                 marginBottom: 8,
             },
             '&>:nth-child(2)': {
@@ -65,8 +57,35 @@ export const styles = theme => {
                 width: 400,
             },
         },
+        boxCustomImg: {
+            border: `8px solid ${common.white}`,
+            borderRadius: 16,
+            '& img': {
+                borderRadius: 12,
+            },
+        },
+        boxRightFive: {
+            display: 'flex',
+            width: '100%',
+        },
+        flexColumn: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: 204,
+            '& img': {
+                width: '100%',
+                height: 400,
+            },
+            position: 'relative',
+            '&.columTwo': {
+                top: -265,
+            },
+            '&.columThree': {
+                top: -12,
+            },
+        },
 
-
+        // Two
         boxSecTwo: {
             display: 'flex',
             justifyContent: 'center',
@@ -78,7 +97,7 @@ export const styles = theme => {
         secTwoContent: {
             '&>:first-child': {
                 fontSize: 32,
-                fontWeight: fontWeights,
+                fontWeight: fontWeights.bold,
                 marginBottom: 8,
             },
             '&>:nth-child(2)': {
@@ -87,16 +106,13 @@ export const styles = theme => {
                 marginBottom: 48,
             },
         },
-        secTwoDes: {
-            height: 'fit-content',
-        },
         secTwoItem: {
             display: 'flex',
             flexDirection: 'column',
             '&>:first-child': {
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: 6,
+                marginBottom: 8,
                 '&>:first-child': {
                     width: 8,
                     height: 8,
@@ -110,6 +126,7 @@ export const styles = theme => {
             },
         },
 
+        // Three
         boxSecThree: {
             display: 'flex',
             justifyContent: 'center',
@@ -121,7 +138,7 @@ export const styles = theme => {
         secThreeContent: {
             '&>:first-child': {
                 fontSize: 32,
-                fontWeight: fontWeights,
+                fontWeight: fontWeights.bold,
                 marginBottom: 48,
             },
             '&>:nth-child(2)': {
@@ -130,7 +147,186 @@ export const styles = theme => {
                 // marginBottom: 48,
             },
         },
+        secThreeItem: {
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: 32,
+            '&>:first-child': {
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: 8,
+                fontSize: 18,
+                '&>:first-child': {
+                    width: 6,
+                    height: 24,
+                    backgroundColor: success.main,
+                    borderRadius: 20,
+                    marginRight: 8,
+                },
+                '&>:last-child': {
+                    fontWeight: fontWeights.bold,
+                },
+            },
+            '&>:last-child': {
+                whiteSpace: 'pre-line',
+            },
+            '&.marT0': {
+                marginTop: 0,
+            },
+        },
+        secThreeItemR: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingLeft: 24,
+            width: 217,
+            height: 119,
+            backgroundColor: common.white,
+            borderRadius: borderRadiuses.big,
+            '&>:first-child': {
+                fontSize: 32,
+                fontWeight: fontWeights.bold,
+                marginBottom: 8,
+            },
+            '&>:last-child': {
+                opacity: 0.5,
+            },
+            '&.custom': {
+                position: 'relative',
+                left: -39,
+                [theme.breakpoints.down('lg')]: {
+                    left: -26,
+                },
+                [theme.breakpoints.down('md')]: {
+                    left: 0,
+                },
+            },
+            '&.active': {
+                backgroundColor: primary.main,
+                color: common.white,
+            },
+        },
 
+        // Four
+        boxSecFour: {
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            paddingTop: 72,
+            backgroundColor: common.white,
+            overflow: 'hidden',
+        },
+        secFourContent: {
+            color: primary.main,
+            height: 'auto',
+            '&>:first-child': {
+                fontSize: 32,
+                fontWeight: fontWeights.bold,
+                marginBottom: 48,
+            },
+            '&>:nth-child(2)': {
+                borderBottom: `1px solid ${info[100]}`,
+                paddingBottom: 24,
+                marginBottom: 48,
+                '&>img': {
+                    width: '100%',
+                    maxWidth: 405,
+                    height: 36,
+                },
+            },
+            [theme.breakpoints.down('md')]: {
+                paddingBottom: 32,
+            },
+        },
+        boxDlImg: {
+            position: 'relative',
+            left: -10,
+        },
+
+        // Five
+        boxSecFive: {
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            height: 671,
+            boxSizing: 'border-box',
+            backgroundColor: primary.main,
+            overflow: 'hidden',
+        },
+        boxFiveInfo: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            height: 671,
+            color: common.white,
+            '&>:first-child': {
+                fontSize: 24,
+                fontWeight: fontWeights.bold,
+                marginBottom: 8,
+            },
+            '&>:nth-child(2)': {
+                fontSize: 18,
+                opacity: 0.5,
+                marginBottom: 24,
+            },
+        },
+        boxFiveImg: {
+            display: 'flex',
+            '& img': {
+                width: '100%',
+                maxWidth: 188,
+                height: 56,
+            },
+            '&>:first-child': {
+                marginRight: 16,
+            },
+        },
+
+        // Six 
+        boxSecSix: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            boxSizing: 'border-box',
+            padding: '96px 0',
+            borderBottom: `1px solid ${info[900]}`,
+            backgroundColor: common.white,
+            overflow: 'hidden',
+        },
+        boxHeader: {
+            display: 'flex',
+            position: 'relative',
+        },
+        headerItem: {
+            display: 'flex',
+            flexDirection: 'column',
+            marginRight: 24,
+            cursor: 'pointer',
+            fontWeight: fontWeights.bold,
+            opacity: 0.5,
+            '&>:first-child': {
+                paddingBottom: 12,
+            },
+            '&>:last-child': {
+                width: 'auto',
+                height: '4px',
+                backgroundColor: primary.main,
+                borderRadius: 20,
+                display: 'none',
+                '&.active': {
+                    display: 'inline-block',
+                },
+            },
+            '&.active': {
+                opacity: 1,
+            },
+        },
+
+        // Common
+        caption: {
+            fontSize: 24,
+            fontWeight: fontWeights.bold,
+        },
         btn: {
             display: 'flex',
             alignItems: 'center',
@@ -145,6 +341,12 @@ export const styles = theme => {
             backgroundColor: success.main,
             color: common.white,
             width: 'fit-content',
+        },
+        heightFit: {
+            height: 'fit-content',
+            [theme.breakpoints.down('md')]: {
+                marginTop: '16px !important',
+            },
         },
 
         // container: {

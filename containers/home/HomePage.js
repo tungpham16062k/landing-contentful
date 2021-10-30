@@ -11,9 +11,18 @@ import { ImageViewer } from '@components/common';
 import { Grid } from '@mui/material';
 
 const icons = {
-    logo: require('@assets/images/logo/logo.png'),
     dakenh: require('@assets/images/common/dakenh.png'),
     dlCall: require('@assets/images/common/dialog_call.png'),
+    menu: require('@assets/images/common/menu.png'),
+    filter: require('@assets/images/common/customer_filter.png'),
+    ggPlay: require('@assets/images/common/gg_play.png'),
+    appStore: require('@assets/images/common/app_store.png'),
+    mobile1: require('@assets/images/common/mobile_1.png'),
+    mobile2: require('@assets/images/common/mobile_2.png'),
+    mobile3: require('@assets/images/common/mobile_3.png'),
+    mobile4: require('@assets/images/common/mobile_4.png'),
+    mobile5: require('@assets/images/common/mobile_5.png'),
+    mobile6: require('@assets/images/common/mobile_6.png'),
 }
 
 const secTwoOpts = [
@@ -35,6 +44,83 @@ const secTwoOpts = [
     },
 ];
 
+const secThreeOpts = [
+    {
+        title: 'Gia tăng hiệu quả chăm sóc khách hàng',
+        description: 'Với việc hỗ trợ chăm sóc đa kênh: Facebook, tổng đài, Website, Zalo … và tích hợp Mini-CRM, mang lại trải nghiệm xuyên suốt cho người dùng khi tương tác với doanh nghiệp. Từ đó mang khách hàng quay trở lại mua hàng nhiều hơn.',
+    },
+    {
+        title: 'Tiết kiệm chi phí',
+        description: `Tiết kiệm chi phí gọi
+        Tiết kiệm chi phí nhân sự: các giải pháp Automation Marketing`,
+    },
+    {
+        title: 'Quản lý hiệu quả',
+        description: 'Quản lý được hiệu suất của nhân viên chăm sóc khách hàng và nhân viên kinh doanh',
+    },
+]
+
+const secThreeRightOpts = [
+    {
+        title: '14.203',
+        description: 'người dùng hoạt động',
+    },
+    {
+        title: '500.000',
+        description: 'cuộc gọi đồng thời',
+    },
+    {
+        title: '1.302.032',
+        description: 'cuộc gọi mỗi ngày',
+    },
+    {
+        title: '2.534.252',
+        description: 'phút gọi mỗi ngày',
+    },
+];
+
+const secFourOpts = [
+    {
+        title: 'Giao diện trực quan',
+        description: 'Dễ dàng theo dõi tiến độ và quản lý các công việc của nhân viên',
+    },
+    {
+        title: 'Trạng thái khách hàng 2 cấp',
+        description: 'Quản lý trạng thái trạng thái khách hàng 2 cấp độ, dễ dạng theo dõi theo dạng KANBAN',
+    },
+    {
+        title: 'Quản lý chi tiết',
+        description: 'Dễ dàng quản lý và theo dõi toàn bộ quá trình chăm sóc khách hàng với toàn bộ lịch sử tương tác',
+    },
+];
+
+const secFiveOpts = [
+    {
+        id: 'columOne',
+        imgOpts: [3, 6],
+    },
+    {
+        id: 'columTwo',
+        imgOpts: [4, 5, 1],
+    },
+    {
+        id: 'columThree',
+        imgOpts: [2, 4],
+    },
+];
+
+const tabOpts = [
+    {
+        id: 'all', label: 'all',
+    },
+    {
+        id: 'natural', label: 'naturalLanguage',
+    },
+    {
+        id: 'sound', label: 'sound',
+    },
+];
+
 class HomePage extends Component {
 
     _renderSectionOne = () => {
@@ -44,7 +130,7 @@ class HomePage extends Component {
                 <div className={classNames(classes.container, classes.secOneContent)}>
                     <div>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</div>
                     <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
-                    <div><ImageViewer src={icons.dakenh} /></div>
+                    <div className={classes.boxCustomImg}><ImageViewer src={icons.dakenh} /></div>
                 </div>
             </div>
         );
@@ -61,7 +147,7 @@ class HomePage extends Component {
                         <Grid item xs={12} md={5}>
                             <ImageViewer src={icons.dlCall} className={classes.dlImg} />
                         </Grid>
-                        <Grid container spacing={4} item xs={7} className={classes.secTwoDes}>
+                        <Grid container spacing={4} item xs={7} className={classes.heightFit}>
                             {
                                 secTwoOpts.map((item, idx) => {
                                     const { title, description } = item;
@@ -97,11 +183,11 @@ class HomePage extends Component {
                     <Grid container className={classNames(classes.secThreeInfo)}>
                         <Grid item xs={12} md={6}>
                             {
-                                secTwoOpts.map((item, idx) => {
+                                secThreeOpts.map((item, idx) => {
                                     const { title, description } = item;
                                     return (
                                         <Grid item xs={10} key={idx}>
-                                            <div className={classes.secTwoItem}>
+                                            <div className={classNames(classes.secThreeItem, { 'marT0': idx === 0 })}>
                                                 <div>
                                                     <div></div>
                                                     <div>{title}</div>
@@ -113,9 +199,42 @@ class HomePage extends Component {
                                 })
                             }
                         </Grid>
-                        <Grid container spacing={4} item xs={6} className={classes.secTwoDes}>
+                        <Grid container spacing={3} item xs={6} className={classes.heightFit}>
                             {
-                                secTwoOpts.map((item, idx) => {
+                                secThreeRightOpts.map((item, idx) => {
+                                    const { title, description } = item;
+                                    return (
+                                        <Grid item sm={12} md={6} key={idx}>
+                                            <div className={classNames(classes.secThreeItemR, { 'custom': idx % 2 !== 0, 'active': secThreeRightOpts.length - 1 === idx })}>
+                                                <div>{title}</div>
+                                                <div>{description}</div>
+                                            </div>
+                                        </Grid>
+                                    );
+                                })
+                            }
+                        </Grid>
+                    </Grid>
+                </div>
+            </div>
+        );
+    }
+
+    _renderSectionFour = () => {
+        const { classes, i18n } = this.props;
+        return (
+            <div className={classes.boxSecFour}>
+                <div className={classNames(classes.container, classes.secFourContent)}>
+                    <div>{i18n.t('Có gì ở OMICRM?')}</div>
+                    <div><ImageViewer src={icons.menu} /></div>
+                    <Grid container>
+                        <Grid item xs={12} md={6} className={classes.boxDlImg}>
+                            <ImageViewer src={icons.filter} className={classes.dlImg} />
+                        </Grid>
+                        <Grid container spacing={4} item xs={6} className={classes.heightFit}>
+                            <Grid item xs={12}><span className={classes.caption}>{i18n.t('Quản lý khách hàng')}</span></Grid>
+                            {
+                                secFourOpts.map((item, idx) => {
                                     const { title, description } = item;
                                     return (
                                         <Grid item xs={12} md={5} key={idx}>
@@ -130,9 +249,6 @@ class HomePage extends Component {
                                     );
                                 })
                             }
-                            <Grid item xs={12}>
-                                <div className={classes.btn}>{i18n.t('Chi tiết về OmiCall')}</div>
-                            </Grid>
                         </Grid>
                     </Grid>
                 </div>
@@ -140,27 +256,94 @@ class HomePage extends Component {
         );
     }
 
-
-    _renderTrailer = () => {
+    _renderSectionFive = () => {
         const { classes, i18n } = this.props;
         return (
-            <div className={classes.boxTrailer}>
-                <div className={classNames(classes.container, classes.trailerContent)}>
-                    <div>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</div>
-                    <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
-                    <div><ImageViewer src={icons.dakenh} /></div>
+            <div className={classes.boxSecFive}>
+                <div className={classNames(classes.container)}>
+                    <Grid container>
+                        <Grid item xs={12} md={6}>
+                            <div className={classes.boxFiveInfo}>
+                                <div>{i18n.t('Sử dụng OMICRM trên điện thoại')}</div>
+                                <div>{i18n.t('Mang tổng đài đi khắp mọi nơi chỉ với 1 chiếc SmartPhone')}</div>
+                                <div className={classes.boxFiveImg}>
+                                    <ImageViewer src={icons.ggPlay} />
+                                    <ImageViewer src={icons.appStore} />
+                                </div>
+                            </div>
+                        </Grid>
+                        <Grid container spacing={4} item xs={6} className={classes.heightFit}>
+                            <div className={classes.boxRightFive}>
+                                {
+                                    secFiveOpts.map((item, idx) => {
+                                        const { id, imgOpts } = item;
+                                        return (
+                                            <div key={idx} className={classNames(classes.flexColumn, [id])}>
+                                                {imgOpts.map((elm, index) => (
+                                                    <ImageViewer key={index} src={icons[`mobile${elm}`]} />
+                                                ))
+                                                }
+                                            </div>
+                                        );
+                                    })
+                                }
+                            </div>
+                        </Grid>
+                    </Grid>
+                </div>
+            </div>
+        );
+    }
+
+    _renderSectionSix = () => {
+        const { classes, i18n } = this.props;
+        return (
+            <div className={classes.boxSecSix}>
+                <div className={classNames(classes.container)}>
+                    <div>{i18n.t('600+')}</div>
+                    <div>{i18n.t('khách hàng là doanh nghiệp đã sử dụng OMICRM')}</div>
+                    <div className={classes.boxHeader}>
+                        {
+                            tabOpts.map((item, idx) => {
+                                const { id, label } = item;
+                                const isActive = true;
+                                // const isActive = curTab === id;
+                                // onClick={() => this.setState({ curTab: id })}
+                                return (
+                                    <div className={classNames(classes.headerItem, { 'active': isActive })}>
+                                        <div>{i18n.t(label)}</div>
+                                        <div className={classNames({ 'active': isActive })}></div>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+                    <Grid container>
+                        {
+                            Array.from({ length: 4 }).map((item, idx) => {
+                                return (
+                                    <Grid item xs={12} md={3}>
+                                        <div><ImageViewer src={icons.appStore} /></div>
+                                    </Grid>
+                                );
+                            })
+                        }
+                    </Grid>
                 </div>
             </div>
         );
     }
 
     render() {
-        const { classes, i18n } = this.props;
+        const { classes } = this.props;
         return (
             <div className={classes.wrapper}>
                 {this._renderSectionOne()}
                 {this._renderSectionTwo()}
                 {this._renderSectionThree()}
+                {this._renderSectionFour()}
+                {this._renderSectionFive()}
+                {this._renderSectionSix()}
             </div>
         )
     }

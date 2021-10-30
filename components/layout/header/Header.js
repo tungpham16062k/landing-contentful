@@ -22,6 +22,7 @@ const menus = [
 
 const icons = {
     logo: require('@assets/images/logo/logo.png'),
+    omicrm: require('@assets/images/logo/ic_crm.svg'),
     vietnam: require('@assets/images/national/vietnam1.png'),
 }
 
@@ -44,9 +45,9 @@ const Header = ({ classes, i18n }) => {
         <div className={classes.wrapper}>
             <div className={classes.containers}>
                 <div className={classes.boxLogo} onClick={handleClick('go2Home')}>
-                    <div><ImageViewer src={icons.logo} size={48} /></div>
+                    <div><ImageViewer src={icons.logo} size={60} /></div>
                     <div>
-                        <div>{i18n.t('OMICRM')}</div>
+                        <div><ImageViewer src={icons.omicrm} style={{ width: 100 }} /></div>
                         <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
                     </div>
                 </div>
