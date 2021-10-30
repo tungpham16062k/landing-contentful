@@ -5,7 +5,7 @@ node {
 
   try {
 
-    project = "cloud.vihat.saas.web.landing.v2"
+    project = "cloud-vihat-saas-web-landing-v2"
     dockerRepo = "dockerhub.infra.omicrm.services"
     imagePrefix = "ci"
     dockerFile = "Dockerfile"
