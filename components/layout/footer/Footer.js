@@ -82,7 +82,7 @@ const Footer = ({ classes, i18n }) => {
                             <div className={classes.boxCircle}>
                                 {
                                     Array.from({ length: 3 }).map((_, idx) => (
-                                        <div></div>
+                                        <div key={idx} />
                                     ))
                                 }
                             </div>
