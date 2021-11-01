@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
 import compose from 'recompose/compose';
 import classNames from 'classnames';
 
@@ -24,7 +25,7 @@ const icons = {
     secSix3: require('@assets/images/common/vihat.png'),
     secSix4: require('@assets/images/common/Paragon.png'),
     secSix5: require('@assets/images/common/globus.png'),
-    secSix6: require('@assets/images/common/Paragon_sin.png'),
+    secSix6: require('@assets/images/common/Paragon_Sin.png'),
     secSix7: require('@assets/images/common/xstrahl.png'),
 }
 
@@ -162,7 +163,7 @@ class HomePage extends Component {
         return (
             <div className={classes.boxSecOne}>
                 <div className={classNames(classes.container, classes.secOneContent)}>
-                    <div>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</div>
+                    <h1>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</h1>
                     <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
                     <div className={classes.boxCustomImg}><ImageViewer src={icons.dakenh} /></div>
                 </div>
@@ -344,7 +345,7 @@ class HomePage extends Component {
                         {
                             Array.from({ length: 8 }).map((_, idx) => {
                                 return (
-                                    <div className={classes.boxItemSix}><ImageViewer src={icons[`secSix${idx}`]} /></div>
+                                    <div key={idx} className={classes.boxItemSix}><ImageViewer src={icons[`secSix${idx}`]} /></div>
                                 );
                             })
                         }
@@ -358,6 +359,9 @@ class HomePage extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.wrapper}>
+                <Head>
+                    <title>OMICRM</title>
+                </Head>
                 {this._renderSectionOne()}
                 {this._renderSectionTwo()}
                 {this._renderSectionThree()}

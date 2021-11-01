@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
                     <meta property="og:title" content={'OMICRM | ' + seoConfig.title} />
                     <meta property="og:description" content={seoConfig.description} />
                     <meta property="og:image" content={seoConfig.image} />
-                    <meta property="og:image:alt" content="" />
+                    <meta property="og:image:alt" content="OMICRM" />
                     <meta property="og:image:width" content="800" />
                     <meta property="og:image:height" content="600" />
                     {/* END: custom header */}
