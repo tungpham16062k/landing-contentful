@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
             <Html lang='vi'>
                 <Head>
                     <meta name='theme-color' content={theme.palette.primary.main} />
-                    <link rel="icon" href={`/static/fav/omi.ico`} type="image/png" sizes="32x32" />
+                    <link rel="icon" href={`/static/fav/logo.png`} type="image/png" sizes="32x32" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" ></link>
                 </Head>
                 <body>

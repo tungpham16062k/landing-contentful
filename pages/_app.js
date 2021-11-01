@@ -14,7 +14,7 @@ export default function MyApp(props) {
     return (
         <Fragment>
             <Head>
-                <title>OMI CALL</title>
+                <title>OMICRM - Nền tảng quản lý giao tiếp đa kênh</title>
                 <meta name='viewport' content='initial-scale=1, width=device-width' />
             </Head>
             <ThemeProvider theme={theme}>

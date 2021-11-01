@@ -23,6 +23,7 @@ export const styles = theme => {
             justifyContent: 'space-between',
             boxSizing: 'border-box',
             borderBottom: `1px solid ${toRgbA(common.white, 0.1)}`,
+            margin: '0 24px',
         },
         nav: {
             display: 'flex',
@@ -35,11 +36,13 @@ export const styles = theme => {
             display: 'flex',
             alignItems: 'center',
             position: 'relative',
-            left: -10,
+            left: -14,
             '&>:last-child': {
-                // marginLeft: 16,
                 '&>:first-child': {
+                    position: 'relative',
+                    left: -2,
                 },
+                marginLeft: 7,
                 '&>:last-child': {
                     marginTop: 4,
                     opacity: 0.5,
@@ -62,6 +65,27 @@ export const styles = theme => {
                 backgroundColor: success.main,
                 border: `1px solid ${success.main}`,
             },
+        },
+        boxSubMenu: {
+            display: 'flex',
+            flexDirection: 'column',
+            color: `${primary.main} !important`,
+        },
+        subMenuItem: {
+
+            display: 'flex',
+            alignItems: 'center',
+            height: 48,
+            paddingLeft: 24,
+            boxSizing: 'border-box',
+            cursor: 'pointer',
+            '&:hover': {
+                backgroundColor: primary[100],
+                color: success.main,
+            },
+        },
+        subMenuIc: {
+            margin: '32px 0 24px 24px',
         },
     }
 };

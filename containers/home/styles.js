@@ -1,21 +1,19 @@
 import { borderRadiuses, cStyles, fontWeights } from '@styles/theme';
-import { toRgbA } from '@utils/StyleUtils';
-
 
 export const styles = theme => {
     const { primary, text, background, info, success, common } = theme.palette;
-    console.log("TCL: theme.palette", theme.palette)
     return {
         wrapper: {
             width: '100%',
-            height: '100%',
+            height: 'auto',
         },
 
         container: {
-            width: 1166,
+            maxWidth: 1166,
+            width: '-webkit-fill-available',
             height: 'auto',
-            boxSizing: 'border-box',
             margin: '0 auto',
+            boxSizing: 'border-box',
             [theme.breakpoints.down('lg')]: {
                 margin: '0 24px',
             },
@@ -26,7 +24,7 @@ export const styles = theme => {
             display: 'flex',
             justifyContent: 'center',
             width: '100%',
-            height: 688,
+            height: 'auto',
             paddingTop: 96,
             backgroundColor: primary.main,
             overflow: 'hidden',
@@ -53,35 +51,15 @@ export const styles = theme => {
         dlImg: {
             width: 'calc(100% - 100px)',
             height: '100%',
-            [theme.breakpoints.down('md')]: {
-                width: 400,
-            },
+            objectFit: 'contain',
+            maxWidth: 400,
         },
         boxCustomImg: {
+            backgroundColor: common.white,
             border: `8px solid ${common.white}`,
-            borderRadius: 16,
+            borderRadius: '16px 16px 0 0',
             '& img': {
-                borderRadius: 12,
-            },
-        },
-        boxRightFive: {
-            display: 'flex',
-            width: '100%',
-        },
-        flexColumn: {
-            display: 'flex',
-            flexDirection: 'column',
-            width: 204,
-            '& img': {
-                width: '100%',
-                height: 400,
-            },
-            position: 'relative',
-            '&.columTwo': {
-                top: -265,
-            },
-            '&.columThree': {
-                top: -12,
+                borderRadius: '6px 6px 0 0',
             },
         },
 
@@ -147,6 +125,13 @@ export const styles = theme => {
                 // marginBottom: 48,
             },
         },
+        boxRightThree: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 24,
+            width: '100%',
+            height: '100%',
+        },
         secThreeItem: {
             display: 'flex',
             flexDirection: 'column',
@@ -183,6 +168,7 @@ export const styles = theme => {
             height: 119,
             backgroundColor: common.white,
             borderRadius: borderRadiuses.big,
+            marginRight: 38,
             '&>:first-child': {
                 fontSize: 32,
                 fontWeight: fontWeights.bold,
@@ -197,13 +183,16 @@ export const styles = theme => {
                 [theme.breakpoints.down('lg')]: {
                     left: -26,
                 },
-                [theme.breakpoints.down('md')]: {
+                [theme.breakpoints.down(1200)]: {
                     left: 0,
                 },
             },
             '&.active': {
                 backgroundColor: primary.main,
                 color: common.white,
+            },
+            [theme.breakpoints.down('md')]: {
+                marginRight: 0,
             },
         },
 
@@ -247,11 +236,13 @@ export const styles = theme => {
         boxSecFive: {
             display: 'flex',
             justifyContent: 'center',
-            width: '100%',
             height: 671,
             boxSizing: 'border-box',
             backgroundColor: primary.main,
             overflow: 'hidden',
+            [theme.breakpoints.down('md')]: {
+                height: 'auto',
+            },
         },
         boxFiveInfo: {
             display: 'flex',
@@ -269,16 +260,50 @@ export const styles = theme => {
                 opacity: 0.5,
                 marginBottom: 24,
             },
+            [theme.breakpoints.down('md')]: {
+                height: 300,
+            },
         },
         boxFiveImg: {
             display: 'flex',
+            flexWrap: 'wrap',
+            gap: 16,
             '& img': {
                 width: '100%',
                 maxWidth: 188,
                 height: 56,
             },
-            '&>:first-child': {
-                marginRight: 16,
+        },
+        boxRightFive: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            width: 'auto',
+            gap: 8,
+            [theme.breakpoints.down('md')]: {
+                width: 'fit-content',
+                marginBottom: 32,
+            },
+        },
+        flexColumn: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: 204,
+            position: 'relative',
+            gap: 8,
+            [theme.breakpoints.down('md')]: {
+                position: 'unset',
+            },
+            '& img': {
+                width: '100%',
+                maxHeight: 400,
+                height: 'auto',
+                objectFit: 'contain',
+            },
+            '&.columTwo': {
+                top: -265,
+            },
+            '&.columThree': {
+                top: -12,
             },
         },
 
@@ -286,24 +311,25 @@ export const styles = theme => {
         boxSecSix: {
             display: 'flex',
             flexDirection: 'column',
-            width: '100%',
-            boxSizing: 'border-box',
+            flexWrap: 'wrap',
             padding: '96px 0',
-            borderBottom: `1px solid ${info[900]}`,
-            backgroundColor: common.white,
+            backgroundColor: background.input,
             overflow: 'hidden',
         },
         boxHeader: {
             display: 'flex',
+            flexWrap: 'wrap',
             position: 'relative',
+            margin: '32px 0',
+            gap: 24,
         },
         headerItem: {
             display: 'flex',
             flexDirection: 'column',
-            marginRight: 24,
             cursor: 'pointer',
             fontWeight: fontWeights.bold,
             opacity: 0.5,
+            ...cStyles.noneUserSelect,
             '&>:first-child': {
                 paddingBottom: 12,
             },
@@ -321,10 +347,46 @@ export const styles = theme => {
                 opacity: 1,
             },
         },
+        boxRightSix: {
+            width: 'auto !important',
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: 24,
+        },
+        boxItemSix: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            maxWidth: 273,
+            width: '100%',
+            height: 120,
+            borderRadius: borderRadiuses.big,
+            border: `1px solid ${info[100]}`,
+            backgroundColor: background.input,
+            boxSizing: 'border-box',
+            cursor: 'pointer',
+            '&:hover': {
+                border: `1px solid ${primary.main}`,
+            },
+            '& img': {
+                width: '40%',
+                height: 56,
+                objectFit: 'contain',
+            },
+        },
 
         // Common
         caption: {
             fontSize: 24,
+            fontWeight: fontWeights.bold,
+            '&.opacity': {
+                opacity: 0.5,
+                fontWeight: 'unset',
+            },
+        },
+        bigCaption: {
+            fontSize: 32,
             fontWeight: fontWeights.bold,
         },
         btn: {
