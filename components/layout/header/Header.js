@@ -93,7 +93,11 @@ const Header = ({ classes, i18n }) => {
                     </div>
                 </div>
                 <div className={classes.nav}>
-                    {isShowMenu ? <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: 'white' }} />
+                    {isShowMenu ?
+                        <Fragment>
+                            <div><ImageViewer src={icons.vietnam} size={20} className={classes.marLR24} /></div>
+                            <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: 'white' }} />
+                        </Fragment>
                         :
                         <Fragment>
                             {menus.map(item => (

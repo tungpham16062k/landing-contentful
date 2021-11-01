@@ -87,5 +87,8 @@ export const styles = theme => {
         subMenuIc: {
             margin: '32px 0 24px 24px',
         },
+        marLR24: {
+            margin: '0 24px',
+        },
     }
 };
