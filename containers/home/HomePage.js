@@ -22,9 +22,9 @@ const icons = {
     secSix1: require('@assets/images/common/ecoe.png'),
     secSix2: require('@assets/images/common/viettel.png'),
     secSix3: require('@assets/images/common/vihat.png'),
-    secSix4: require('@assets/images/common/paragon.png'),
+    secSix4: require('@assets/images/common/Paragon.png'),
     secSix5: require('@assets/images/common/globus.png'),
-    secSix6: require('@assets/images/common/paragon_sin.png'),
+    secSix6: require('@assets/images/common/Paragon_sin.png'),
     secSix7: require('@assets/images/common/xstrahl.png'),
 }
 
