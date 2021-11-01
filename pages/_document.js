@@ -40,11 +40,10 @@ export default class MyDocument extends Document {
                     <link rel="canonical" href={seoConfig.canonical} />
                     <meta name="description" content={seoConfig.description} />
                     <meta name="twitter:card" content="summary_large_image" />
-                    <meta name="twitter:site" content="@smatestore" />
-                    <meta name="twitter:creator" content="@kds(minhnguyenkhoi)" />
+                    <meta name="twitter:site" content="@omicrm" />
                     <meta property="og:type" content="website" />
                     <meta property="og:locale" content="vi_VN" />
-                    <meta property="og:site_name" content="Smatestore" />
+                    <meta property="og:site_name" content="OMICRM" />
                     <meta property="og:url" content={seoConfig.canonical} />
                     <meta property="og:title" content={'OMICRM | ' + seoConfig.title} />
                     <meta property="og:description" content={seoConfig.description} />
