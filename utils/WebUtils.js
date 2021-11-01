@@ -5,8 +5,11 @@ import { i18nText, setI18nLng } from '@libs/i18n';
 import WebMgr from '@cores/WebMgr';
 import NotifyMgr from '@cores/NotifyMgr';
 
-import { timerFunc, isArray, isJson, toJson, isString } from './Utils';
 import { getCookieName, setCookie } from './CookieUtils';
+import { getRouterRoute } from './RouterUtils';
+import { timerFunc, isArray, isJson, toJson, isString } from './Utils';
+
+import { SeoConfigs } from '@constants/index';
 
 const WebInstance = WebMgr.getInstance();
 const NotifyInstance = NotifyMgr.getInstance();
@@ -150,4 +153,33 @@ export const setPlayerStream = (id, stream) => {
 export const toggleWebLanguage = (curLng) => {
     setI18nLng(curLng);
     setCookie(getCookieName(), { curLng });
+}
+
+export const getSeoConfig = (config) => {
+    config = { ...(SeoConfigs[getRouterRoute()] || SeoConfigs.default), ...config };
+    let { title, description, canonical, image } = config;
+    if (!canonical && typeof window !== 'undefined') {
+        let { origin, pathname } = window.location;
+        canonical = origin + pathname;
+    }
+    return {
+        title,
+        description,
+        canonical,
+        openGraph: {
+            title,
+            description,
+            url: canonical,
+            ...(image && {
+                images: [
+                    {
+                        url: image,
+                        width: 800,
+                        height: 600,
+                        alt: 'url_preview',
+                    },
+                ]
+            }),
+        },
+    };
 }
