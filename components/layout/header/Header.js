@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useMemo } from 'react';
 import compose from 'recompose/compose';
 import classNames from 'classnames';
 
@@ -28,6 +28,8 @@ const icons = {
     omicrm: require('@assets/images/logo/ic_crm.svg'),
     vietnam: require('@assets/images/national/vietnam1.png'),
     menu: require('@assets/icons/common/ic_menu_list.svg'),
+    logo1: require('@assets/images/logo/logo_crm.svg'),
+    omicrm1: require('@assets/images/logo/ic_crm_b.svg'),
 }
 
 const menusOpts = [
@@ -41,7 +43,7 @@ const menusOpts = [
 ];
 
 
-const Header = ({ classes, i18n }) => {
+const Header = ({ classes, i18n, fixedMenu }) => {
 
     const [states, setStates] = useState({ show: {} });
 
@@ -83,12 +85,12 @@ const Header = ({ classes, i18n }) => {
     }
 
     return (
-        <div className={classes.wrapper}>
+        <div className={classNames(classes.wrapper, { 'fixedMenu': fixedMenu })}>
             <div className={classes.containers}>
-                <div className={classes.boxLogo} onClick={handleClick('go2Home')}>
-                    <div><ImageViewer src={icons.logo} size={60} /></div>
+                <div className={classNames(classes.boxLogo, { 'fixedMenu': fixedMenu })} onClick={handleClick('go2Home')}>
+                    <div><ImageViewer src={icons[`logo${fixedMenu ? '1' : ''}`]} size={fixedMenu ? 40 : 60} /></div>
                     <div>
-                        <div><ImageViewer src={icons.omicrm} style={{ width: 100 }} /></div>
+                        <div><ImageViewer src={icons[`omicrm${fixedMenu ? '1' : ''}`]} style={{ width: 100 }} /></div>
                         <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
                     </div>
                 </div>
@@ -96,7 +98,7 @@ const Header = ({ classes, i18n }) => {
                     {isShowMenu ?
                         <Fragment>
                             <div><ImageViewer src={icons.vietnam} size={20} className={classes.marLR24} /></div>
-                            <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: 'white' }} />
+                            <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: fixedMenu ? 'primary' : 'white' }} />
                         </Fragment>
                         :
                         <Fragment>
@@ -105,14 +107,14 @@ const Header = ({ classes, i18n }) => {
                                     noUnderline
                                     key={item.id}
                                     className={classes.menuItem}
-                                    color={'white'}
+                                    color={fixedMenu ? 'primary' : 'white'}
                                     href={item.id}
                                     text={i18n.t(item.text)}
                                     target={item.target}
                                 />
                             ))}
-                            <div className={classNames(classes.btn, 'bgGreen')}>Đăng ký</div>
-                            <div className={classNames(classes.btn)}>Đăng nhập</div>
+                            <div className={classNames(classes.btn, 'bgGreen', { 'colorW': fixedMenu })}>Đăng ký</div>
+                            <div className={classNames(classes.btn, { 'bgPrimary': fixedMenu, 'colorW': fixedMenu })}>Đăng nhập</div>
                             <div><ImageViewer src={icons.vietnam} style={{ height: 20, marginLeft: 24 }} /></div>
                         </Fragment>
                     }

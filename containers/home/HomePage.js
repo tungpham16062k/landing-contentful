@@ -112,18 +112,6 @@ const secFiveOpts = [
     },
 ];
 
-const tabOpts = [
-    {
-        id: 'all', label: 'all',
-    },
-    {
-        id: 'natural', label: 'naturalLanguage',
-    },
-    {
-        id: 'sound', label: 'sound',
-    },
-];
-
 const secSixOpts = [
     {
         id: 'bds',
@@ -162,10 +150,11 @@ class HomePage extends Component {
         this.state = {
             curTab: secSixOpts[0].id,
         }
+        this.myRefs = {};
     }
 
     componentDidMount() {
-        this.props.onRef(this);
+        this.props.onRef(this.myRefs, this);
     }
 
     _renderSectionOne = () => {
@@ -184,7 +173,7 @@ class HomePage extends Component {
     _renderSectionTwo = () => {
         const { classes, i18n } = this.props;
         return (
-            <div className={classes.boxSecTwo}>
+            <div className={classes.boxSecTwo} ref={ref => this.myRefs.sectionTwo = ref}>
                 <div className={classNames(classes.container, classes.secTwoContent)}>
                     <div>{i18n.t('Tích hợp OmiCall')}</div>
                     <div>{i18n.t('Tổng đài ảo chuyên nghiệp và thông minh')}</div>

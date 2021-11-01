@@ -25,7 +25,7 @@ class ImageViewer extends Component {
         const { src } = this.props;
         if (src !== prevProps.src) {
             this.injectFailed = false;
-            this.setState({ src, isError: false });
+            this.setState({ src: src?.default, isError: false });
         }
     }
 

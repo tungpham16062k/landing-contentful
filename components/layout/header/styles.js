@@ -11,13 +11,20 @@ export const styles = theme => {
             backgroundColor: primary.main,
             display: 'flex',
             justifyContent: 'center',
-            position: 'fixed',
-            top: 0,
-            left: 0,
+            boxSizing: 'border-box',
+            '&.fixedMenu': {
+                position: 'fixed',
+                zIndex: 1,
+                top: 0,
+                left: 0,
+                backgroundColor: common.white,
+                color: primary.main,
+                boxShadow: '0 4px 16px 0 rgba(29, 48, 80, 0.16)',
+            },
         },
         containers: {
             width: 1166,
-            height: '100%',
+            height: 80,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -49,6 +56,12 @@ export const styles = theme => {
                     fontSize: 12,
                 },
             },
+            '&.fixedMenu': {
+                left: 0,
+                '&>:last-child': {
+                    marginLeft: 16,
+                },
+            },
         },
         btn: {
             display: 'flex',
@@ -64,6 +77,13 @@ export const styles = theme => {
             '&.bgGreen': {
                 backgroundColor: success.main,
                 border: `1px solid ${success.main}`,
+            },
+            '&.bgPrimary': {
+                backgroundColor: primary.main,
+                border: `1px solid ${primary.main}`,
+            },
+            '&.colorW': {
+                color: common.white,
             },
         },
         boxSubMenu: {
