@@ -169,6 +169,7 @@ export const styles = theme => {
             backgroundColor: common.white,
             borderRadius: borderRadiuses.big,
             marginRight: 38,
+            cursor: 'pointer',
             '&>:first-child': {
                 fontSize: 32,
                 fontWeight: fontWeights.bold,
@@ -187,7 +188,7 @@ export const styles = theme => {
                     left: 0,
                 },
             },
-            '&.active': {
+            '&:hover': {
                 backgroundColor: primary.main,
                 color: common.white,
             },
@@ -278,32 +279,16 @@ export const styles = theme => {
             display: 'flex',
             flexWrap: 'wrap',
             width: 'auto',
-            gap: 8,
-            [theme.breakpoints.down('md')]: {
-                width: 'fit-content',
-                marginBottom: 32,
-            },
-        },
-        flexColumn: {
-            display: 'flex',
-            flexDirection: 'column',
-            width: 204,
             position: 'relative',
-            gap: 8,
+            top: -300,
             [theme.breakpoints.down('md')]: {
-                position: 'unset',
+                marginBottom: 32,
+                top: 0,
             },
             '& img': {
+                maxWidth: 600,
                 width: '100%',
-                maxHeight: 400,
                 height: 'auto',
-                objectFit: 'contain',
-            },
-            '&.columTwo': {
-                top: -265,
-            },
-            '&.columThree': {
-                top: -12,
             },
         },
 

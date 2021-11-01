@@ -12,17 +12,12 @@ import { Grid } from '@mui/material';
 
 const icons = {
     dakenh: require('@assets/images/common/dakenh1.png'),
-    dlCall: require('@assets/images/common/dialog_call.png'),
+    dlCall: require('@assets/images/common/dialog_call1.png'),
     menu: require('@assets/images/common/menu.png'),
     filter: require('@assets/images/common/customer_filter.png'),
     ggPlay: require('@assets/images/common/gg_play.png'),
     appStore: require('@assets/images/common/app_store.png'),
-    mobile1: require('@assets/images/common/mobile_1.png'),
-    mobile2: require('@assets/images/common/mobile_2.png'),
-    mobile3: require('@assets/images/common/mobile_3.png'),
-    mobile4: require('@assets/images/common/mobile_4.png'),
-    mobile5: require('@assets/images/common/mobile_5.png'),
-    mobile6: require('@assets/images/common/mobile_6.png'),
+    mobile: require('@assets/images/common/mobile.png'),
     secSix0: require('@assets/images/common/25_fit.png'),
     secSix1: require('@assets/images/common/ecoe.png'),
     secSix2: require('@assets/images/common/viettel.png'),
@@ -191,7 +186,7 @@ class HomePage extends Component {
         return (
             <div className={classes.boxSecTwo}>
                 <div className={classNames(classes.container, classes.secTwoContent)}>
-                    <div>{i18n.t('Tại sao lại lựa chọn chúng tôi?')}</div>
+                    <div>{i18n.t('Tích hợp OmiCall')}</div>
                     <div>{i18n.t('Tổng đài ảo chuyên nghiệp và thông minh')}</div>
                     <Grid container>
                         <Grid item xs={12} md={5}>
@@ -255,7 +250,7 @@ class HomePage extends Component {
                                     secThreeRightOpts.map((item, idx) => {
                                         const { title, description } = item;
                                         return (
-                                            <div key={idx} className={classNames(classes.secThreeItemR, { 'custom': idx % 2 !== 0, 'active': secThreeRightOpts.length - 1 === idx })}>
+                                            <div key={idx} className={classNames(classes.secThreeItemR, { 'custom': idx % 2 !== 0, })}>
                                                 <div>{title}</div>
                                                 <div>{description}</div>
                                             </div>
@@ -324,19 +319,7 @@ class HomePage extends Component {
                         </Grid>
                         <Grid container item xs={12} sm={12} md={7} className={classes.heightFit}>
                             <div className={classes.boxRightFive}>
-                                {
-                                    secFiveOpts.map((item, idx) => {
-                                        const { id, imgOpts } = item;
-                                        return (
-                                            <div key={idx} className={classNames(classes.flexColumn, [id])}>
-                                                {imgOpts.map((elm, index) => (
-                                                    <ImageViewer key={index} src={icons[`mobile${elm}`]} />
-                                                ))
-                                                }
-                                            </div>
-                                        );
-                                    })
-                                }
+                                <ImageViewer src={icons.mobile} />
                             </div>
                         </Grid>
                     </Grid>
