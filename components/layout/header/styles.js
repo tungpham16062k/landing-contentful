@@ -1,4 +1,4 @@
-import { borderRadiuses, cStyles, fontWeights } from '@styles/theme';
+import { borderRadiuses, cStyles } from '@styles/theme';
 import { toRgbA } from '@utils/StyleUtils';
 
 export const styles = theme => {
@@ -12,14 +12,23 @@ export const styles = theme => {
             display: 'flex',
             justifyContent: 'center',
             boxSizing: 'border-box',
+        },
+        wrapper1: {
+            width: '100%',
+            height: 80,
+            display: 'flex',
+            justifyContent: 'center',
+            boxSizing: 'border-box',
+            transition: `0.2s all`,
+            position: 'fixed',
+            zIndex: 1,
+            top: -80,
+            left: 0,
+            backgroundColor: common.white,
+            color: primary.main,
+            boxShadow: '0 4px 16px 0 rgba(29, 48, 80, 0.16)',
             '&.fixedMenu': {
-                position: 'fixed',
-                zIndex: 1,
                 top: 0,
-                left: 0,
-                backgroundColor: common.white,
-                color: primary.main,
-                boxShadow: '0 4px 16px 0 rgba(29, 48, 80, 0.16)',
             },
         },
         containers: {

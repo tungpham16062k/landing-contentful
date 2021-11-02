@@ -8,7 +8,7 @@ import Footer from './footer';
 
 const Layout = ({ classes, children }) => {
 
-    const [showMenu, setShowMenu] = useState(false);
+    const [fixedMenu, setFixedMenu] = useState(false);
 
     const myRefs = useRef({});
 
@@ -16,8 +16,8 @@ const Layout = ({ classes, children }) => {
         const wrapper = myRefs.current.wrapper;
         const childSecTwo = myRefs.current.children.sectionTwo;
         if (wrapper && childSecTwo) {
-            const isShowMenu = wrapper.scrollTop >= childSecTwo.offsetTop;
-            setShowMenu(isShowMenu);
+            const isFixed = wrapper.scrollTop >= childSecTwo.offsetTop;
+            setFixedMenu(isFixed);
         }
     }
     const childrenWithProps = React.Children.map(children, child => {
@@ -30,11 +30,12 @@ const Layout = ({ classes, children }) => {
     });
 
     return (
-        <div className={classes.wrapper}
+        <div
+            className={classes.wrapper}
             ref={ref => myRefs.current.wrapper = ref}
             onScroll={() => handScroll()}
         >
-            <Header fixedMenu={showMenu} />
+            <Header fixedMenu={fixedMenu} />
             <div className={classes.boxContent}>
                 {childrenWithProps}
                 <Footer />

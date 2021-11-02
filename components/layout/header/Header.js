@@ -84,58 +84,52 @@ const Header = ({ classes, i18n, fixedMenu }) => {
         );
     }
 
-    return (
-        <div className={classNames(classes.wrapper, { 'fixedMenu': fixedMenu })}>
-            <div className={classes.containers}>
-                <div className={classNames(classes.boxLogo, { 'fixedMenu': fixedMenu })} onClick={handleClick('go2Home')}>
-                    <div><ImageViewer src={icons[`logo${fixedMenu ? '1' : ''}`]} size={fixedMenu ? 40 : 60} /></div>
-                    <div>
-                        <div><ImageViewer src={icons[`omicrm${fixedMenu ? '1' : ''}`]} style={{ width: 100 }} /></div>
-                        <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
+    const _renderMenu = (classWrap = 'wrapper') => {
+        return (
+            <div className={classNames(classes[classWrap], { 'fixedMenu': fixedMenu })}>
+                <div className={classes.containers}>
+                    <div className={classNames(classes.boxLogo, { 'fixedMenu': fixedMenu })} onClick={handleClick('go2Home')}>
+                        <div><ImageViewer src={icons[`logo${fixedMenu ? '1' : ''}`]} size={fixedMenu ? 40 : 60} /></div>
+                        <div>
+                            <div><ImageViewer src={icons[`omicrm${fixedMenu ? '1' : ''}`]} style={{ width: 100 }} /></div>
+                            <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
+                        </div>
+                    </div>
+                    <div className={classes.nav}>
+                        {isShowMenu ?
+                            <Fragment>
+                                <div><ImageViewer src={icons.vietnam} size={20} className={classes.marLR24} /></div>
+                                <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: fixedMenu ? 'primary' : 'white' }} />
+                            </Fragment>
+                            :
+                            <Fragment>
+                                {menus.map(item => (
+                                    <TextButton
+                                        noUnderline
+                                        key={item.id}
+                                        className={classes.menuItem}
+                                        color={fixedMenu ? 'primary' : 'white'}
+                                        href={item.id}
+                                        text={i18n.t(item.text)}
+                                        target={item.target}
+                                    />
+                                ))}
+                                <div className={classNames(classes.btn, 'bgGreen', { 'colorW': fixedMenu })}>Đăng ký</div>
+                                <div className={classNames(classes.btn, { 'bgPrimary': fixedMenu, 'colorW': fixedMenu })}>Đăng nhập</div>
+                                <div><ImageViewer src={icons.vietnam} style={{ height: 20, marginLeft: 24 }} /></div>
+                            </Fragment>
+                        }
                     </div>
                 </div>
-                <div className={classes.nav}>
-                    {isShowMenu ?
-                        <Fragment>
-                            <div><ImageViewer src={icons.vietnam} size={20} className={classes.marLR24} /></div>
-                            <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: fixedMenu ? 'primary' : 'white' }} />
-                        </Fragment>
-                        :
-                        <Fragment>
-                            {menus.map(item => (
-                                <TextButton
-                                    noUnderline
-                                    key={item.id}
-                                    className={classes.menuItem}
-                                    color={fixedMenu ? 'primary' : 'white'}
-                                    href={item.id}
-                                    text={i18n.t(item.text)}
-                                    target={item.target}
-                                />
-                            ))}
-                            <div className={classNames(classes.btn, 'bgGreen', { 'colorW': fixedMenu })}>Đăng ký</div>
-                            <div className={classNames(classes.btn, { 'bgPrimary': fixedMenu, 'colorW': fixedMenu })}>Đăng nhập</div>
-                            <div><ImageViewer src={icons.vietnam} style={{ height: 20, marginLeft: 24 }} /></div>
-                        </Fragment>
-                    }
-                    {/* <TextButton
-                        noUnderline
-                        className={classes.menuItem}
-                        color={'white'}
-                        text={'VI'}
-                        onClick={handleClick('toggleLng', 'vi')}
-                    />
-                    <TextButton
-                        noUnderline
-                        className={classes.menuItem}
-                        color={'white'}
-                        text={'EN'}
-                        onClick={handleClick('toggleLng', 'en')}
-                    /> */}
-                </div>
             </div>
+        );
+    }
+    return (
+        <Fragment>
+            {_renderMenu()}
+            {_renderMenu('wrapper1')}
             {_renderDrawer()}
-        </div>
+        </Fragment>
     )
 }
 
