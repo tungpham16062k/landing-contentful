@@ -1,12 +1,12 @@
 import { borderRadiuses, fontWeights } from "@styles/theme";
 
 export const styles = theme => {
-    const { primary, text, background, info, success, common } = theme.palette;
+    const { primary, info, common } = theme.palette;
     return {
         wrapper: {
             display: 'flex',
             justifyContent: 'center',
-            backgroundColor: background.input,
+            backgroundColor: common.white,
             boxSizing: 'border-box',
         },
         container: {

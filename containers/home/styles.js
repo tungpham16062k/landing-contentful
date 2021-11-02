@@ -298,7 +298,7 @@ export const styles = theme => {
             flexDirection: 'column',
             flexWrap: 'wrap',
             padding: '96px 0',
-            backgroundColor: background.input,
+            backgroundColor: common.white,
             overflow: 'hidden',
         },
         boxHeader: {
