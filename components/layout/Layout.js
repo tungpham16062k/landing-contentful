@@ -1,4 +1,7 @@
 import React, { useRef, useState } from 'react';
+import Head from 'next/head';
+
+import { getRouterPathname } from '@utils/RouterUtils';
 
 import { withStyles } from '@mui/styles';
 import { styles } from './styles';
@@ -6,12 +9,18 @@ import { styles } from './styles';
 import Header from './header';
 import Footer from './footer';
 
+import { SeoConfigs } from '@constants/index';
+
 const Layout = ({ classes, children }) => {
 
     const [fixedMenu, setFixedMenu] = useState(false);
 
     const myRefs = useRef({});
 
+    const getTitle = () => {
+        const path = getRouterPathname();
+        return `${path === '/' ? 'OMICRM | ' : ''}${SeoConfigs[getRouterPathname()]?.title}`;
+    }
     const handScroll = () => {
         const wrapper = myRefs.current.wrapper;
         const childSecTwo = myRefs.current.children.sectionTwo;
@@ -35,6 +44,9 @@ const Layout = ({ classes, children }) => {
             ref={ref => myRefs.current.wrapper = ref}
             onScroll={() => handScroll()}
         >
+            <Head>
+                <title>{getTitle()}</title>
+            </Head>
             <Header fixedMenu={fixedMenu} />
             <div className={classes.boxContent}>
                 {childrenWithProps}

@@ -13,13 +13,16 @@ export default Object.freeze({
     '/introduce': {
         title: `Giới thiệu`,
         canonical: `${webUrl}introduce`,
+        image: `${previewUrl}intro.png`,
     },
     '/omi-call': {
         title: `OMI Call`,
         canonical: `${webUrl}omi-call`,
+        image: `${previewUrl}intro.png`,
     },
     '/pricing': {
         title: `Bảng giá`,
         canonical: `${webUrl}pricing`,
+        image: `${previewUrl}intro.png`,
     },
 });

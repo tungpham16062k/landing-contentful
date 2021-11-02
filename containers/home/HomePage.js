@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Head from 'next/head';
 import compose from 'recompose/compose';
 import classNames from 'classnames';
 
@@ -359,9 +358,6 @@ class HomePage extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.wrapper}>
-                <Head>
-                    <title>OMICRM</title>
-                </Head>
                 {this._renderSectionOne()}
                 {this._renderSectionTwo()}
                 {this._renderSectionThree()}
