@@ -1,19 +1,20 @@
-import { borderRadiuses, cStyles, fontWeights } from '@styles/theme';
 import { toRgbA } from '@utils/StyleUtils';
 
-export const styles = theme => {
-    const { primary, success, common } = theme.palette;
+import { borderRadiuses, cStyles, linearGradients } from '@styles/theme';
+
+export const styles = ({ palette }) => {
+    const { success, common } = palette;
     return {
         wrapper: {
             width: '100%',
             height: 80,
             color: common.white,
-            backgroundColor: primary.main,
             display: 'flex',
             justifyContent: 'center',
             position: 'fixed',
             top: 0,
             left: 0,
+            background: linearGradients.main,
         },
         containers: {
             width: 1166,
