@@ -1,4 +1,5 @@
 import { cStyles, borderRadiuses, fontWeights, linearGradients } from '@styles/theme';
+import { getTransitionStyle } from '@utils/StyleUtils';
 
 export const styles = theme => {
     const { primary, background, info, success, common } = theme.palette;
@@ -56,6 +57,7 @@ export const styles = theme => {
             maxWidth: 400,
         },
         boxCustomImg: {
+            marginBottom: -120,
             backgroundColor: common.white,
             border: `8px solid ${common.white}`,
             borderRadius: '16px 16px 0 0',
@@ -190,8 +192,8 @@ export const styles = theme => {
                 },
             },
             '&:hover': {
-                backgroundColor: primary.main,
                 color: common.white,
+                background: linearGradients.main,
             },
             [theme.breakpoints.down('md')]: {
                 marginRight: 0,
@@ -240,8 +242,8 @@ export const styles = theme => {
             justifyContent: 'center',
             height: 671,
             boxSizing: 'border-box',
-            backgroundColor: primary.main,
             overflow: 'hidden',
+            background: linearGradients.main,
             [theme.breakpoints.down('md')]: {
                 height: 'auto',
             },
@@ -386,9 +388,9 @@ export const styles = theme => {
             cursor: 'pointer',
             border: `1px solid ${common.white}`,
             ...cStyles.noneUserSelect,
-            backgroundColor: success.main,
             color: common.white,
             width: 'fit-content',
+            background: linearGradients.green,
         },
         heightFit: {
             height: 'fit-content',

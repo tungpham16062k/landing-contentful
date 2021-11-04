@@ -24,7 +24,7 @@ const menus = [
 ];
 
 const icons = {
-    logo: require('@assets/images/logo/logo.png'),
+    logo: require('@assets/images/logo/logo_crm.png'),
     omicrm: require('@assets/images/logo/ic_crm.svg'),
     vietnam: require('@assets/images/national/vietnam1.png'),
     menu: require('@assets/icons/common/ic_menu_list.svg'),
@@ -55,13 +55,12 @@ const handleClick = (...args) => e => {
     }
 };
 
-const Header = ({ classes, i18n, fixedMenu }) => {
+const Header = ({ classes, i18n }) => {
 
     const [states, setStates] = useState({ show: {} });
     const [isOverlay, setOverlay] = useState();
 
     const overlayStatus = useRef();
-    const headerRef = useRef();
     const wrapperRef = useRef();
 
     const handleWrapperScroll = () => {
@@ -79,7 +78,6 @@ const Header = ({ classes, i18n, fixedMenu }) => {
     };
 
     useEffect(() => {
-        headerRef.current = document.getElementById('header');
         wrapperRef.current = document.getElementById('wrapper');
         wrapperRef.current.addEventListener('scroll', handleWrapperScroll);
     }, []);
@@ -113,7 +111,7 @@ const Header = ({ classes, i18n, fixedMenu }) => {
             <div className={classNames(classes.wrapper, 'p-sticky', { 'overlay': isOverlay })}>
                 <div className={classes.container}>
                     <div className={classNames(classes.boxLogo, { 'overlay': isOverlay })} onClick={handleClick('go2Home')}>
-                        <div><ImageViewer src={icons[`logo${isOverlay ? '1' : ''}`]} size={isOverlay ? 40 : 60} /></div>
+                        <div><ImageViewer src={icons[`logo${isOverlay ? '1' : ''}`]} size={40} /></div>
                         <div>
                             <div><ImageViewer src={icons[`omicrm${isOverlay ? '1' : ''}`]} style={{ width: 100 }} /></div>
                             <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
@@ -138,8 +136,12 @@ const Header = ({ classes, i18n, fixedMenu }) => {
                                         target={item.target}
                                     />
                                 ))}
-                                <div className={classNames(classes.btn, 'bgGreen', { 'colorW': isOverlay })}>Đăng ký</div>
-                                <div className={classNames(classes.btn, { 'bgPrimary': isOverlay, 'colorW': isOverlay })}>Đăng nhập</div>
+                                <div style={{ borderColor: isOverlay ? 'white' : '#00898E' }} className={classNames(classes.btn, 'bgGreen', { 'colorW': isOverlay })}>
+                                    Đăng ký
+                                </div>
+                                <div style={{ borderColor: isOverlay ? '#1468ee' : 'white' }} className={classNames(classes.btn, { 'bgPrimary': isOverlay, 'colorW': isOverlay })}>
+                                    Đăng nhập
+                                </div>
                                 <div><ImageViewer src={icons.vietnam} style={{ height: 20, marginLeft: 24 }} /></div>
                             </Fragment>
                         }

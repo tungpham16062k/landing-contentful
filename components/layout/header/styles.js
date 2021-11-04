@@ -1,6 +1,6 @@
 import { getShadowStyle, getTransitionStyle, toRgbA } from '@utils/StyleUtils';
 
-import { borderRadiuses, cStyles } from '@styles/theme';
+import { borderRadiuses, cStyles, linearGradients } from '@styles/theme';
 
 export const styles = ({ palette }) => {
     const { primary, success, common } = palette;
@@ -41,23 +41,17 @@ export const styles = ({ palette }) => {
             display: 'flex',
             alignItems: 'center',
             position: 'relative',
-            left: -14,
+            left: 0,
             '&>:last-child': {
+                marginLeft: 16,
                 '&>:first-child': {
                     position: 'relative',
                     left: -2,
                 },
-                marginLeft: 7,
                 '&>:last-child': {
                     marginTop: 4,
                     opacity: 0.5,
                     fontSize: 12,
-                },
-            },
-            '&.overlay': {
-                left: 0,
-                '&>:last-child': {
-                    marginLeft: 16,
                 },
             },
         },
@@ -68,20 +62,17 @@ export const styles = ({ palette }) => {
             padding: '0 24px',
             boxSizing: 'border-box',
             marginLeft: 24,
-            borderRadius: borderRadiuses.primary,
             cursor: 'pointer',
-            border: `1px solid ${common.white}`,
+            color: common.white,
+            borderRadius: borderRadiuses.primary,
             ...cStyles.noneUserSelect,
+            borderWidth: 1,
+            borderStyle: 'solid',
             '&.bgGreen': {
-                backgroundColor: success.main,
-                border: `1px solid ${success.main}`,
+                background: linearGradients.green,
             },
             '&.bgPrimary': {
-                backgroundColor: primary.main,
-                border: `1px solid ${primary.main}`,
-            },
-            '&.colorW': {
-                color: common.white,
+                background: linearGradients.main,
             },
         },
         boxSubMenu: {

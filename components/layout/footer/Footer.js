@@ -10,7 +10,6 @@ import { styles } from './styles';
 import { Grid } from '@mui/material';
 
 import ImageViewer from '@components/common/image-viewer';
-import { left } from 'glamor';
 
 const icons = {
     logo: require('@assets/images/logo/logo_crm.svg'),

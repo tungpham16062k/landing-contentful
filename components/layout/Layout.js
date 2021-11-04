@@ -23,7 +23,7 @@ const Layout = ({ classes, children }) => {
                 <title>{getTitle()}</title>
             </Head>
             <Header />
-            <div id={'container'} className={classes.boxContent}>
+            <div className={classes.boxContent}>
                 {children}
                 <Footer />
             </div>

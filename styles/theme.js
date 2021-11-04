@@ -156,13 +156,7 @@ export const boxShadows = {
 export const linearGradients = {
 
     main: 'linear-gradient(to bottom, #1468ee, #0035c7)',
-
-    tBlue: 'linear-gradient(to top, #01b8fa, #1468ee)',
-    bBlue: 'linear-gradient(to bottom, #01b8fa, #1468ee)',
-    rBlue: 'repeating-linear-gradient(rgba(38, 122, 255,0.95), rgba(1, 184, 250,0.95) 70%, rgba(1, 184, 250, 0.95) 30%, rgba(1, 184, 250,0.95) 100%)',
-
-    green: 'linear-gradient(to bottom, #32c991, #4ca750)',
-    white: 'linear-gradient(to bottom, #ffffff, #ffffff)',
+    green: 'linear-gradient(to bottom, #32b366, #00898E)',
 
 };
 

@@ -16,6 +16,7 @@ import Layout from '@components/layout';
 import { domains } from '@constants/index';
 
 class RootContainer extends Component {
+    
     constructor(props) {
         super(props);
         this._mounted = true;
