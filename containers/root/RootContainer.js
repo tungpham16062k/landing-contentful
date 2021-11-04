@@ -50,11 +50,11 @@ class RootContainer extends Component {
 
     render() {
         const { sessionReady } = this.state;
-        const { classes } = this.props;
+        const { classes, ...layoutProps } = this.props;
         return (
             <div className={classNames(classes.wrapper, { ['center']: !sessionReady })}>
                 {sessionReady
-                    ? <Layout {...this.props} />
+                    ? <Layout {...layoutProps} />
                     : <Spinkit name={'CubeGrid'} size={32} />
                 }
             </div>

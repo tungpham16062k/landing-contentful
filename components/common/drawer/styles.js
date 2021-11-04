@@ -1,8 +1,9 @@
-import { colors, cStyles, fontSizes, fontWeights, borderRadiuses } from '@styles/theme';
-import { toRgbA } from '@utils/StyleUtils';
+import { getShadowStyle, toRgbA } from '@utils/StyleUtils';
+
+import { colors, cStyles, fontWeights, borderRadiuses } from '@styles/theme';
 
 export const styles = theme => {
-    const { primary, text, background, info, success, common } = theme.palette || {};
+    const { primary, success, common } = theme.palette || {};
     return ({
         paper: {
             backgroundColor: colors.white,
@@ -16,13 +17,16 @@ export const styles = theme => {
             fontSize: 15,
             color: colors.primary,
             borderRadius: borderRadiuses.primary,
-            border: `1px solid ${toRgbA(colors.primary, 0.1)}`,
+            border: `solid 1px ${primary[100]}`,
             backgroundColor: colors.bgColor,
             cursor: 'pointer',
-            marginRight: 16,
+            marginLeft: 16,
             '&:hover': {
-                border: `1px solid ${colors.primary}`,
-            }
+                border: `1px solid ${colors.primary} !important`,
+            },
+            '&.marL0': {
+                marginLeft: 0,
+            },
         },
         primaryBtn: {
             color: colors.white,
@@ -44,22 +48,34 @@ export const styles = theme => {
             fontWeight: fontWeights.bold,
             color: colors.primary,
             boxSizing: 'border-box',
-            boxShadow: '0 4px 16px 0 rgba(29, 48, 80, 0.04)',
-            // border: `1px solid ${toRgbA(colors.blue, 0.1)}`,
+            ...getShadowStyle({ color: toRgbA(primary.main, 0.04) }),
+            '&.normalDrawer': {
+                boxShadow: 'unset',
+            },
         },
         boxContent: {
             flexGrow: 1,
             height: 'calc(100% - 148px)',
             overflowY: 'auto !important',
+            '&.normalDrawer': {
+                height: 'calc(100% - 68px)',
+            },
         },
         boxAction: {
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
             padding: '0 24px',
             height: 80,
             boxSizing: 'border-box',
             border: `1px solid ${toRgbA(colors.blue, 0.1)}`,
             ...cStyles.noneUserSelect,
+            '&>:first-child': {
+                display: 'flex',
+            },
+            '&>:last-child': {
+                display: 'flex',
+            },
         },
         closeIcon: {
             display: 'flex',
@@ -74,7 +90,14 @@ export const styles = theme => {
             boxSizing: 'border-box',
             '&:hover': {
                 border: `1px solid ${colors.primary}`
-            }
+            },
+            '&.normalDrawer': {
+                top: 18,
+                right: 0,
+                position: 'fixed',
+                backgroundColor: common.black,
+                border: `1px solid ${common.black}`,
+            },
         },
         hide: {
             display: 'none !important',

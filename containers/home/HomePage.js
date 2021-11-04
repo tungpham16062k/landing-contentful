@@ -17,12 +17,15 @@ const icons = {
     filter: require('@assets/images/common/customer_filter.png'),
     ggPlay: require('@assets/images/common/gg_play.png'),
     appStore: require('@assets/images/common/app_store.png'),
-    mobile1: require('@assets/images/common/mobile_1.png'),
-    mobile2: require('@assets/images/common/mobile_2.png'),
-    mobile3: require('@assets/images/common/mobile_3.png'),
-    mobile4: require('@assets/images/common/mobile_4.png'),
-    mobile5: require('@assets/images/common/mobile_5.png'),
-    mobile6: require('@assets/images/common/mobile_6.png'),
+    mobile: require('@assets/images/common/mobile.png'),
+    secSix0: require('@assets/images/common/25_fit.png'),
+    secSix1: require('@assets/images/common/ecoe.png'),
+    secSix2: require('@assets/images/common/viettel.png'),
+    secSix3: require('@assets/images/common/vihat.png'),
+    secSix4: require('@assets/images/common/Paragon.png'),
+    secSix5: require('@assets/images/common/globus.png'),
+    secSix6: require('@assets/images/common/Paragon_Sin.png'),
+    secSix7: require('@assets/images/common/xstrahl.png'),
 }
 
 const secTwoOpts = [
@@ -109,26 +112,57 @@ const secFiveOpts = [
     },
 ];
 
-const tabOpts = [
+const secSixOpts = [
     {
-        id: 'all', label: 'all',
+        id: 'bds',
+        label: 'Bất động sản',
     },
     {
-        id: 'natural', label: 'naturalLanguage',
+        id: 'tc',
+        label: 'Tài chính',
     },
     {
-        id: 'sound', label: 'sound',
+        id: 'bl',
+        label: 'Bán lẻ',
+    },
+    {
+        id: 'cn',
+        label: 'Công nghệ',
+    },
+    {
+        id: 'gd',
+        label: 'Giáo dục',
+    },
+    {
+        id: 'yt',
+        label: 'Y tế',
+    },
+    {
+        id: 'satm',
+        label: 'Spa & Thẩm mỹ',
     },
 ];
 
 class HomePage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            curTab: secSixOpts[0].id,
+        }
+        this.myRefs = {};
+    }
+
+    componentDidMount() {
+        this.props.onRef(this.myRefs, this);
+    }
 
     _renderSectionOne = () => {
         const { classes, i18n } = this.props;
         return (
             <div className={classes.boxSecOne}>
                 <div className={classNames(classes.container, classes.secOneContent)}>
-                    <div>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</div>
+                    <h1>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</h1>
                     <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
                     <div className={classes.boxCustomImg}><ImageViewer src={icons.dakenh} /></div>
                 </div>
@@ -139,15 +173,15 @@ class HomePage extends Component {
     _renderSectionTwo = () => {
         const { classes, i18n } = this.props;
         return (
-            <div className={classes.boxSecTwo}>
+            <div className={classes.boxSecTwo} ref={ref => this.myRefs.sectionTwo = ref}>
                 <div className={classNames(classes.container, classes.secTwoContent)}>
-                    <div>{i18n.t('Tại sao lại lựa chọn chúng tôi?')}</div>
+                    <div>{i18n.t('Tích hợp OmiCall')}</div>
                     <div>{i18n.t('Tổng đài ảo chuyên nghiệp và thông minh')}</div>
                     <Grid container>
                         <Grid item xs={12} md={5}>
                             <ImageViewer src={icons.dlCall} className={classes.dlImg} />
                         </Grid>
-                        <Grid container spacing={4} item xs={7} className={classes.heightFit}>
+                        <Grid container spacing={4} item xs={12} md={7} className={classes.heightFit}>
                             {
                                 secTwoOpts.map((item, idx) => {
                                     const { title, description } = item;
@@ -199,20 +233,20 @@ class HomePage extends Component {
                                 })
                             }
                         </Grid>
-                        <Grid container spacing={3} item xs={6} className={classes.heightFit}>
-                            {
-                                secThreeRightOpts.map((item, idx) => {
-                                    const { title, description } = item;
-                                    return (
-                                        <Grid item sm={12} md={6} key={idx}>
-                                            <div className={classNames(classes.secThreeItemR, { 'custom': idx % 2 !== 0, 'active': secThreeRightOpts.length - 1 === idx })}>
+                        <Grid item xs={12} sm={12} md={6} className={classes.heightFit}>
+                            <div className={classes.boxRightThree}>
+                                {
+                                    secThreeRightOpts.map((item, idx) => {
+                                        const { title, description } = item;
+                                        return (
+                                            <div key={idx} className={classNames(classes.secThreeItemR, { 'custom': idx % 2 !== 0, })}>
                                                 <div>{title}</div>
                                                 <div>{description}</div>
                                             </div>
-                                        </Grid>
-                                    );
-                                })
-                            }
+                                        );
+                                    })
+                                }
+                            </div>
                         </Grid>
                     </Grid>
                 </div>
@@ -231,24 +265,22 @@ class HomePage extends Component {
                         <Grid item xs={12} md={6} className={classes.boxDlImg}>
                             <ImageViewer src={icons.filter} className={classes.dlImg} />
                         </Grid>
-                        <Grid container spacing={4} item xs={6} className={classes.heightFit}>
+                        <Grid container spacing={4} item xs={12} md={6} className={classes.heightFit}>
                             <Grid item xs={12}><span className={classes.caption}>{i18n.t('Quản lý khách hàng')}</span></Grid>
-                            {
-                                secFourOpts.map((item, idx) => {
-                                    const { title, description } = item;
-                                    return (
-                                        <Grid item xs={12} md={5} key={idx}>
-                                            <div className={classes.secTwoItem}>
-                                                <div>
-                                                    <div></div>
-                                                    <div>{title}</div>
-                                                </div>
-                                                <div>{description}</div>
+                            {secFourOpts.map((item, idx) => {
+                                const { title, description } = item;
+                                return (
+                                    <Grid item xs={12} md={5} key={idx}>
+                                        <div className={classes.secTwoItem}>
+                                            <div>
+                                                <div></div>
+                                                <div>{title}</div>
                                             </div>
-                                        </Grid>
-                                    );
-                                })
-                            }
+                                            <div>{description}</div>
+                                        </div>
+                                    </Grid>
+                                );
+                            })}
                         </Grid>
                     </Grid>
                 </div>
@@ -262,7 +294,7 @@ class HomePage extends Component {
             <div className={classes.boxSecFive}>
                 <div className={classNames(classes.container)}>
                     <Grid container>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} md={5}>
                             <div className={classes.boxFiveInfo}>
                                 <div>{i18n.t('Sử dụng OMICRM trên điện thoại')}</div>
                                 <div>{i18n.t('Mang tổng đài đi khắp mọi nơi chỉ với 1 chiếc SmartPhone')}</div>
@@ -272,21 +304,9 @@ class HomePage extends Component {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid container spacing={4} item xs={6} className={classes.heightFit}>
+                        <Grid container item xs={12} sm={12} md={7} className={classes.heightFit}>
                             <div className={classes.boxRightFive}>
-                                {
-                                    secFiveOpts.map((item, idx) => {
-                                        const { id, imgOpts } = item;
-                                        return (
-                                            <div key={idx} className={classNames(classes.flexColumn, [id])}>
-                                                {imgOpts.map((elm, index) => (
-                                                    <ImageViewer key={index} src={icons[`mobile${elm}`]} />
-                                                ))
-                                                }
-                                            </div>
-                                        );
-                                    })
-                                }
+                                <ImageViewer src={icons.mobile} />
                             </div>
                         </Grid>
                     </Grid>
@@ -296,21 +316,21 @@ class HomePage extends Component {
     }
 
     _renderSectionSix = () => {
+        const { curTab } = this.state;
         const { classes, i18n } = this.props;
         return (
             <div className={classes.boxSecSix}>
                 <div className={classNames(classes.container)}>
-                    <div>{i18n.t('600+')}</div>
-                    <div>{i18n.t('khách hàng là doanh nghiệp đã sử dụng OMICRM')}</div>
+                    <div className={classes.bigCaption}>{i18n.t('600+')}</div>
+                    <div className={classNames(classes.caption, 'opacity')}>{i18n.t('khách hàng là doanh nghiệp đã sử dụng OMICRM')}</div>
                     <div className={classes.boxHeader}>
                         {
-                            tabOpts.map((item, idx) => {
+                            secSixOpts.map((item, idx) => {
                                 const { id, label } = item;
-                                const isActive = true;
-                                // const isActive = curTab === id;
-                                // onClick={() => this.setState({ curTab: id })}
+                                const isActive = curTab === id;
+
                                 return (
-                                    <div className={classNames(classes.headerItem, { 'active': isActive })}>
+                                    <div key={idx} className={classNames(classes.headerItem, { 'active': isActive })} onClick={() => this.setState({ curTab: id })}>
                                         <div>{i18n.t(label)}</div>
                                         <div className={classNames({ 'active': isActive })}></div>
                                     </div>
@@ -318,17 +338,15 @@ class HomePage extends Component {
                             })
                         }
                     </div>
-                    <Grid container>
+                    <div className={classes.boxRightSix}>
                         {
-                            Array.from({ length: 4 }).map((item, idx) => {
+                            Array.from({ length: 8 }).map((_, idx) => {
                                 return (
-                                    <Grid item xs={12} md={3}>
-                                        <div><ImageViewer src={icons.appStore} /></div>
-                                    </Grid>
+                                    <div key={idx} className={classes.boxItemSix}><ImageViewer src={icons[`secSix${idx}`]} /></div>
                                 );
                             })
                         }
-                    </Grid>
+                    </div>
                 </div>
             </div>
         );
@@ -348,6 +366,10 @@ class HomePage extends Component {
         )
     }
 
+}
+
+HomePage.defaultProps = {
+    onRef: () => null,
 }
 
 export default compose(withI18n(), withStyles(styles))(HomePage);

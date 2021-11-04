@@ -52,7 +52,7 @@ export const colors = {
     grayDark: '#585d71',
     grayDim: '#9C9C9C',
 
-    blue: '#267aff',
+    blue: '#1468ee',
     blueLight: '#57bfdb',
     blueLess: '#848c99',
     blueDim: '#616E82',
@@ -65,18 +65,10 @@ export const colors = {
     red: '#e94440',
     redLight: '#fb7b65',
 
-    orange: '#ffa850',
+    orange: '#FF9126',
     orangeLight: '#e9bc5a',
-    orangeDark: '#fea220',
 
     purple: '#a540b8',
-
-    call_in: '#267aff',
-    call_out: '#4ca750',
-    call_answer: '#fea220',
-    call_no_answer: '#e94440',
-    call_local: '#a540b8',
-    call_unknow: '#7f8c8d',
 
 };
 
@@ -85,9 +77,9 @@ export const textColors = {
     white: '#ffffff',
     light: '#666666',
     primary: '#494949',
-    info: '#267aff',
+    info: '#1468ee',
     success: '#4ca750',
-    warn: '#fea220',
+    warn: '#FF9126',
     error: '#e94440',
     danger: '#e94440',
     placeholder: 'rgba(73,73,73,0.5)',
@@ -165,8 +157,8 @@ export const linearGradients = {
 
     main: 'linear-gradient(to bottom, #1468ee, #0035c7)',
 
-    tBlue: 'linear-gradient(to top, #01b8fa, #267aff)',
-    bBlue: 'linear-gradient(to bottom, #01b8fa, #267aff)',
+    tBlue: 'linear-gradient(to top, #01b8fa, #1468ee)',
+    bBlue: 'linear-gradient(to bottom, #01b8fa, #1468ee)',
     rBlue: 'repeating-linear-gradient(rgba(38, 122, 255,0.95), rgba(1, 184, 250,0.95) 70%, rgba(1, 184, 250, 0.95) 30%, rgba(1, 184, 250,0.95) 100%)',
 
     green: 'linear-gradient(to bottom, #32c991, #4ca750)',
@@ -236,8 +228,8 @@ export const avatarColors = {
 };
 
 export const roleColors = [
-    '#2d4563', '#a540b8', '#e94440', '#fea220', '#4ca750',
-    '#267aff', '#494949', '#585d71', '#fb7b65', '#ffa850',
+    '#2d4563', '#a540b8', '#e94440', '#FF9126', '#4ca750',
+    '#1468ee', '#494949', '#585d71', '#fb7b65', '#ffa850',
     '#e9bc5a', '#5890dc', '#57bfdb',
 ];
 
@@ -315,9 +307,9 @@ const theme = createTheme({
         },
         ...Object.fromEntries([
             ['#1e3150', 'primary'],
-            ['#ff5955', 'error'],
-            ['#fea220', 'warning'],
-            ['#267aff', 'info'],
+            ['#FF4343', 'error'],
+            ['#FF9126', 'warning'],
+            ['#1468ee', 'info'],
             ['#32b366', 'success'],
         ].map(([colorValue, colorName]) => [colorName, {
             main: colorValue,
