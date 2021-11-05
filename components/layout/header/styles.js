@@ -30,12 +30,15 @@ export const styles = ({ palette }) => {
             boxSizing: 'border-box',
             margin: '0 24px',
         },
-        nav: {
+        navWrapper: {
             display: 'flex',
             alignItems: 'center',
+            '& $navBtn:first-of-type': {
+                marginLeft: 20,
+            },
         },
-        menuItem: {
-            marginLeft: 24,
+        navLink: {
+            padding: '8px 12px',
         },
         boxLogo: {
             display: 'flex',
@@ -43,7 +46,11 @@ export const styles = ({ palette }) => {
             position: 'relative',
             left: 0,
             '&>:last-child': {
+                height: 40,
                 marginLeft: 16,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
                 '&>:first-child': {
                     position: 'relative',
                     left: -2,
@@ -55,13 +62,13 @@ export const styles = ({ palette }) => {
                 },
             },
         },
-        btn: {
+        navBtn: {
             display: 'flex',
             alignItems: 'center',
             height: 48,
             padding: '0 24px',
             boxSizing: 'border-box',
-            marginLeft: 24,
+            marginLeft: 16,
             cursor: 'pointer',
             color: common.white,
             borderRadius: borderRadiuses.primary,
@@ -96,8 +103,9 @@ export const styles = ({ palette }) => {
         subMenuIc: {
             margin: '32px 0 24px 24px',
         },
-        marLR24: {
+        btnChangeLgn: {
             margin: '0 24px',
+            objectFit: 'contain',
         },
     }
 };

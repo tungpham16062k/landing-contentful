@@ -11,10 +11,10 @@ import { Grid } from '@mui/material';
 
 import ImageViewer from '@components/common/image-viewer';
 
-const icons = {
-    logo: require('@assets/images/logo/logo_crm.svg'),
-    omicrm: require('@assets/images/logo/ic_crm_b.svg'),
-}
+const logos = {
+    circleColor: require('@assets/images/logo/logo_circle_color.svg'),
+    fullColor: require('@assets/images/logo/logo_full_color.svg'),
+};
 
 const leftOpts = [
     {
@@ -58,9 +58,9 @@ const Footer = ({ classes, i18n }) => {
                     <Grid item lg={7} xl={7} md={12} sm={12} xs={12} classes={{ root: classes.boxLeft }}>
                         <div>
                             <div className={classes.boxLogo}>
-                                <div><ImageViewer src={icons.logo} size={40} /></div>
+                                <div><ImageViewer src={logos.circleColor} size={40} /></div>
                                 <div>
-                                    <div><ImageViewer src={icons.omicrm} style={{ width: 100 }} /></div>
+                                    <div><ImageViewer src={logos.fullColor} style={{ width: 100 }} /></div>
                                     <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
                                 </div>
                             </div>

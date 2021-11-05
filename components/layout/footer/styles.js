@@ -33,7 +33,11 @@ export const styles = theme => {
             alignItems: 'center',
             position: 'relative',
             '&>:last-child': {
-                marginLeft: 16,
+                height: 40,
+                marginLeft: 16, 
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
                 '&>:first-child': {
                     position: 'relative',
                     left: -2,

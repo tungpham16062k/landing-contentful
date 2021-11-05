@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 20">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#1468ee"/>
+            <stop offset="1" stop-color="#0035c7"/>
+        </linearGradient>
+    </defs>
+    <g id="Group_16458" data-name="Group 16458" transform="translate(-4041 22904)">
+        <g id="Group_16455" data-name="Group 16455" transform="translate(4081 -22904)" opacity=".5">
+            <g id="download_1_" data-name="download (1)" transform="translate(35)">
+                <path id="Path_9697" data-name="Path 9697" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16450" data-name="Group 16450" transform="translate(.8 1.2)">
+                    <path id="Path_9698" data-name="Path 9698" d="M24.88 10.32h-3.6a.35.35 0 0 0-.36.24l-4.84 11.72-4.84-11.72a.35.35 0 0 0-.36-.24h-3.6a.378.378 0 0 0-.4.4v16.8a.378.378 0 0 0 .4.4h2.8a.378.378 0 0 0 .4-.4v-10.8h.28l4.04 9.76a.384.384 0 0 0 .36.24h1.88a.35.35 0 0 0 .36-.24l4-9.76h.28v10.8a.378.378 0 0 0 .4.4h2.8a.378.378 0 0 0 .4-.4v-16.8a.378.378 0 0 0-.4-.4Z" transform="translate(-6.88 -10.32)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+            <g id="download_3_" data-name="download (3)">
+                <path id="Path_9701" data-name="Path 9701" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16452" data-name="Group 16452" transform="translate(2 .8)">
+                    <path id="Path_9702" data-name="Path 9702" d="M30.029 19.28a.408.408 0 0 0-.382.284c-.559 1.62-2.123 2.516-4.137 2.516-2.935 0-4.71-2.218-4.71-6.006s1.775-5.994 4.7-5.994a4.078 4.078 0 0 1 4.184 2.9.407.407 0 0 0 .387.3s2.214 0 2.931 0a.2.2 0 0 0 .2-.226C32.73 9.468 29.511 6.88 25.5 6.88c-5.118 0-8.3 3.528-8.3 9.206s3.184 9.194 8.31 9.194c4.027 0 7.11-2.314 7.688-5.766a.2.2 0 0 0-.2-.234Z" transform="translate(-17.2 -6.88)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+            <g id="download_4_" data-name="download (4)" transform="translate(17.083)">
+                <path id="Path_9703" data-name="Path 9703" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16453" data-name="Group 16453" transform="translate(2.8 1.2)">
+                    <path id="Path_9704" data-name="Path 9704" d="m38.434 27.333-3.4-6.414a5.3 5.3 0 0 0 3.046-4.949c0-3.432-2.55-5.65-6.5-5.65h-7.1a.4.4 0 0 0-.4.4v16.8a.4.4 0 0 0 .4.4h2.8a.4.4 0 0 0 .4-.4v-6h3.6l3.276 6.187a.4.4 0 0 0 .354.213h3.17a.4.4 0 0 0 .354-.587ZM31.29 18.72h-3.61v-5.6h3.536c2.028 0 3.264 1.067 3.264 2.806 0 1.774-1.162 2.794-3.19 2.794Z" transform="translate(-24.08 -10.32)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+        </g>
+        <g id="Group_16456" data-name="Group 16456" transform="translate(4041 -22904)">
+            <g id="download_1_2" data-name="download (1)" transform="translate(20)">
+                <path id="Path_9697-2" data-name="Path 9697" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16450-2" data-name="Group 16450" transform="translate(.8 1.2)">
+                    <path id="Path_9698-2" data-name="Path 9698" d="M24.88 10.32h-3.6a.35.35 0 0 0-.36.24l-4.84 11.72-4.84-11.72a.35.35 0 0 0-.36-.24h-3.6a.378.378 0 0 0-.4.4v16.8a.378.378 0 0 0 .4.4h2.8a.378.378 0 0 0 .4-.4v-10.8h.28l4.04 9.76a.384.384 0 0 0 .36.24h1.88a.35.35 0 0 0 .36-.24l4-9.76h.28v10.8a.378.378 0 0 0 .4.4h2.8a.378.378 0 0 0 .4-.4v-16.8a.378.378 0 0 0-.4-.4Z" transform="translate(-6.88 -10.32)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+            <g id="download_2_" data-name="download (2)" transform="translate(33.75)">
+                <path id="Path_9699" data-name="Path 9699" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16451" data-name="Group 16451" transform="translate(8 1.2)">
+                    <path id="Path_9700" data-name="Path 9700" d="M72 28.32h-2.8a.4.4 0 0 1-.4-.4v-17.2a.4.4 0 0 1 .4-.4H72a.4.4 0 0 1 .4.4v17.2a.4.4 0 0 1-.4.4Z" transform="translate(-68.8 -10.32)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+            <g id="download">
+                <path id="Path_9705" data-name="Path 9705" d="M0 20V0h20v20Z" fill="none"/>
+                <g id="Group_16454" data-name="Group 16454" transform="translate(1.6 .8)">
+                    <path id="Path_9706" data-name="Path 9706" d="M22.178 6.88c-5.114 0-8.418 3.609-8.418 9.194 0 5.678 3.225 9.206 8.418 9.206 5.17 0 8.382-3.528 8.382-9.206S27.348 6.88 22.178 6.88Zm0 15.2c-2.993 0-4.817-2.35-4.817-6.006s1.87-5.994 4.817-5.994 4.783 2.328 4.783 5.994-1.836 6.006-4.784 6.006Z" transform="translate(-13.76 -6.88)" fill="url(#linear-gradient)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
