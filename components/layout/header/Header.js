@@ -14,7 +14,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { ImageViewer, TextButton } from '@components/common';
 import CDrawer from '@components/common/drawer/CDrawer';
-import { id } from 'date-fns/locale';
 
 const menus = [
     { id: 'introduce', text: 'introduce', target: 'push' },
