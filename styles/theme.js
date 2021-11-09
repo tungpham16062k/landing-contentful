@@ -156,7 +156,7 @@ export const boxShadows = {
 export const linearGradients = {
 
     main: 'linear-gradient(to bottom, #1468ee, #0035c7)',
-    green: 'linear-gradient(to bottom, #32b366, #00898E)',
+    green: 'linear-gradient(to bottom, #32b366, #079241)',
 
 };
 
@@ -301,10 +301,10 @@ const theme = createTheme({
         },
         ...Object.fromEntries([
             ['#1e3150', 'primary'],
-            ['#FF4343', 'error'],
-            ['#FF9126', 'warning'],
+            ['#ff5955', 'error'],
+            ['#fea220', 'warning'],
             ['#1468ee', 'info'],
-            ['#32b366', 'success'],
+            ['#079241', 'success'],
         ].map(([colorValue, colorName]) => [colorName, {
             main: colorValue,
             ...Object.fromEntries(Array.from({ length: 9 }).map((_, index) => [
