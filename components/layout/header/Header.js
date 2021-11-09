@@ -14,6 +14,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { ImageViewer, TextButton } from '@components/common';
 import CDrawer from '@components/common/drawer/CDrawer';
+import { id } from 'date-fns/locale';
 
 const menus = [
     { id: 'introduce', text: 'introduce', target: 'push' },
@@ -43,8 +44,8 @@ const menusOpts = [
     { id: 'pricing', text: 'pricing', target: 'push' },
     { id: 'https://api.omicall.com/', text: 'API DOCS', target: 'new' },
     { id: 'https://docs.omicrm.com/', text: 'document', target: 'new' },
-    { id: 'register', text: 'Đăng ký', target: 'push' },
-    { id: 'login', text: 'Đăng nhập', target: 'push' },
+    { id: 'https://sso.omicrm.vn/register', text: 'Đăng ký', target: 'new' },
+    { id: 'https://sso.omicrm.vn/', text: 'Đăng nhập', target: 'new' },
 ];
 
 const handleClick = (...args) => e => {
@@ -104,7 +105,11 @@ const Header = ({ classes, i18n }) => {
                 <div className={classes.boxSubMenu}>
                     <ImageViewer onClick={() => toggleShow('drawer', false)} src={icons.menu} className={classes.subMenuIc} size={20} svg={{ color: 'primary' }} />
                     {menusOpts.map((item, idx) => (
-                        <div key={idx} className={classes.subMenuItem}>{i18n.t(item.text)}</div>
+                        <div
+                            key={idx}
+                            className={classes.subMenuItem}
+                            onClick={() => item.id.includes('https') && window.open(item.id)}
+                        >{i18n.t(item.text)}</div>
                     ))}
                 </div>
             </CDrawer>
@@ -142,10 +147,10 @@ const Header = ({ classes, i18n }) => {
                                         target={item.target}
                                     />
                                 ))}
-                                <div style={{ borderColor: isOverlay ? 'white' : '#00898E' }} className={classNames(classes.navBtn, 'bgGreen', { 'colorW': isOverlay })}>
+                                <div style={{ borderColor: isOverlay ? 'white' : '#00898E' }} className={classNames(classes.navBtn, 'bgGreen', { 'colorW': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/register')}>
                                     Đăng ký
                                 </div>
-                                <div style={{ borderColor: isOverlay ? '#1468ee' : 'white' }} className={classNames(classes.navBtn, { 'bgPrimary': isOverlay, 'colorW': isOverlay })}>
+                                <div style={{ borderColor: isOverlay ? '#1468ee' : 'white' }} className={classNames(classes.navBtn, { 'bgPrimary': isOverlay, 'colorW': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/')}>
                                     Đăng nhập
                                 </div>
                                 <div><ImageViewer src={icons.vn} style={{ height: 20, marginLeft: 24, objectFit: 'contain' }} /></div>
