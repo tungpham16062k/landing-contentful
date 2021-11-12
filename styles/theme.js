@@ -298,16 +298,24 @@ const theme = createTheme({
         background: {
             default: '#fbfbfc',
             input: '#f5f6fa',
+            info: 'linear-gradient(to bottom, #1468ee, #0035c7)',
+            warning: 'linear-gradient(to bottom, #ffb300, #eb7500)',
+            success: 'linear-gradient(to bottom, #32b366, #079241)',
+            error: 'linear-gradient(to bottom, #ff5955, #cc2121)',
         },
         ...Object.fromEntries([
             ['#1e3150', 'primary'],
             ['#ff5955', 'error'],
             ['#fea220', 'warning'],
-            ['#1468ee', 'info'],
+            ['#1468EE', 'info'],
             ['#079241', 'success'],
+            ['#ffffff', 'white'],
+            ['#00000', 'black'],
+            ['#a540b8', 'pink'],
         ].map(([colorValue, colorName]) => [colorName, {
             main: colorValue,
-            ...Object.fromEntries(Array.from({ length: 9 }).map((_, index) => [
+            [50]: toRgbA(colorValue, 0.05),
+            ...Object.fromEntries(Array.from({ length: 8 }).map((_, index) => [
                 `${index + 1}00`, toRgbA(colorValue, (index + 1) / 10)
             ])),
         }])),

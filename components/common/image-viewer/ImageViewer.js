@@ -8,14 +8,15 @@ import { getSvgStyle, getClassName, getColor } from '@utils/StyleUtils';
 
 import { cStyles, imgSizes } from '@styles/theme';
 
-import defaultSrc from '@assets/images/common/img_error.png';
+import ImgDefaultError from '@assets/images/common/img_error.png';
 
 class ImageViewer extends Component {
 
     constructor(props) {
         super(props);
+        let { src } = props;
         this.state = {
-            src: props.src?.default,
+            src: src?.default || src,
             isError: false,
         };
         this._mounted = true;
@@ -23,9 +24,9 @@ class ImageViewer extends Component {
 
     componentDidUpdate(prevProps) {
         const { src } = this.props;
-        if (src !== prevProps.src) {
+        if ((src !== prevProps.src) || (src?.default !== prevProps.src?.default)) {
             this.injectFailed = false;
-            this.setState({ src: src?.default, isError: false });
+            this.setState({ src: src?.default || src, isError: false });
         }
     }
 
@@ -36,10 +37,7 @@ class ImageViewer extends Component {
         const { fallbackSrc } = this.props;
         if (!isError) {
             this.props.onError?.();
-            this._mounted && this.setState({
-                src: fallbackSrc || defaultSrc,
-                [!!fallbackSrc ? 'isError' : 'errored']: true,
-            });
+            this._mounted && this.setState({ src: fallbackSrc || ImgDefaultError, isError: true });
         }
     };
 
@@ -47,7 +45,7 @@ class ImageViewer extends Component {
         const { src, isError } = this.state;
         const {
             id, svg, type, size, width, height, bgImg, color, style, circle, minimum, disable, overflow, lazyload, fallbackSrc,
-            draggable, clickable, className, selectable, resizeMode, attributes, rotate,
+            draggable, clickable, className, selectable, resizeMode, attributes, rotate, customkey,
             onClick, onError, onMouseOver, onMouseLeave, onMouseDown,
         } = this.props;
         const isFunc = typeof onClick === 'function';
@@ -88,7 +86,7 @@ class ImageViewer extends Component {
         }
         if (svg) {
             if (color || svg.color) {
-                imgProps.className = classNames(baseClass, className, getClassName(getSvgStyle({ ...svg, color: getColor(color || svg.color) })));
+                imgProps.className = classNames(baseClass, className, getClassName(getSvgStyle({ ...svg, customkey, color: getColor(color || svg.color) })));
                 imgProps.afterInjection = err => { if (err && this._mounted && !this.injectFailed) { this.injectFailed = true; this.setState({ reRender: true }); } };
             }
             return <ReactSVG {...{ ...imgProps, ...svg, src, style }} />;

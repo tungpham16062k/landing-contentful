@@ -2,7 +2,7 @@ import { getSvgStyle } from '@utils/StyleUtils';
 
 import { cStyles, fontWeights } from '@styles/theme';
 
-export const styles = theme => ({
+export const styles = ({ palette }) => ({
     link: {
         width: 'fit-content',
         color: 'unset !important',
@@ -16,7 +16,7 @@ export const styles = theme => ({
         letterSpacing: 'normal !important',
         fontSize: '15px !important',
         fontWeight: fontWeights.primary + '!important',
-        color: theme.palette.text.primary,
+        color: palette.text.primary,
         '& .text': {
             ...cStyles.textEllipsis,
         },
@@ -25,13 +25,13 @@ export const styles = theme => ({
             cursor: 'not-allowed',
         },
         '&.contained': {
-            color: theme.palette.common.white,
-            ...getSvgStyle({ color: theme.palette.common.white }),
+            color: palette.common.white,
+            ...getSvgStyle({ color: palette.common.white }),
         },
         '&.outlined:not(.colorful)': {
-            border: `1px solid ${theme.palette.info[100]} !important`,
+            border: `1px solid ${palette.info[100]} !important`,
             '&:hover': {
-                border: `1px solid ${theme.palette.primary.main} !important`,
+                border: `1px solid ${palette.primary.main} !important`,
             },
         },
         '&.circle': {

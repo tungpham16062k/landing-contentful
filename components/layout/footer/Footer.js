@@ -12,8 +12,8 @@ import { Grid } from '@mui/material';
 import ImageViewer from '@components/common/image-viewer';
 
 const logos = {
-    circleColor: require('@assets/images/logo/logo_circle_color.svg'),
-    fullColor: require('@assets/images/logo/logo_full_color.svg'),
+    circleColor: require('@assets/images/logo/logo_circle_main.svg'),
+    fullColor: require('@assets/images/logo/logo_full_main.svg'),
 };
 
 const leftOpts = [

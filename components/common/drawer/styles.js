@@ -1,36 +1,35 @@
-import { getShadowStyle, toRgbA } from '@utils/StyleUtils';
+import { getShadowStyle } from '@utils/StyleUtils';
 
-import { colors, cStyles, fontWeights, borderRadiuses } from '@styles/theme';
+import { cStyles, fontWeights, borderRadiuses } from '@styles/theme';
 
-export const styles = theme => {
-    const { primary, success, common } = theme.palette || {};
+export const styles = ({ palette }) => {
     return ({
         paper: {
-            backgroundColor: colors.white,
+            backgroundColor: palette.white.main,
             height: '100vh !important',
-            color: colors.primary,
+            color: palette.primary.main,
         },
         btn: {
             height: 48,
             padding: '14px 24px',
             boxSizing: 'border-box',
             fontSize: 15,
-            color: colors.primary,
+            color: palette.primary.main,
             borderRadius: borderRadiuses.primary,
-            border: `solid 1px ${primary[100]}`,
-            backgroundColor: colors.bgColor,
+            border: `solid 1px ${palette.primary[100]}`,
+            backgroundColor: palette.background.default,
             cursor: 'pointer',
             marginLeft: 16,
             '&:hover': {
-                border: `1px solid ${colors.primary} !important`,
+                border: `1px solid ${palette.primary.main} !important`,
             },
             '&.marL0': {
                 marginLeft: 0,
             },
         },
         primaryBtn: {
-            color: colors.white,
-            backgroundColor: success.main,
+            color: palette.white.main,
+            backgroundColor: palette.success.main,
         },
         boxDraw: {
             width: '100%',
@@ -46,9 +45,9 @@ export const styles = theme => {
             height: 68,
             fontSize: 18,
             fontWeight: fontWeights.bold,
-            color: colors.primary,
+            color: palette.primary.main,
             boxSizing: 'border-box',
-            ...getShadowStyle({ color: toRgbA(primary.main, 0.04) }),
+            ...getShadowStyle({ color: palette.primary[50] }),
             '&.normalDrawer': {
                 boxShadow: 'unset',
             },
@@ -68,7 +67,7 @@ export const styles = theme => {
             padding: '0 24px',
             height: 80,
             boxSizing: 'border-box',
-            border: `1px solid ${toRgbA(colors.blue, 0.1)}`,
+            border: `1px solid ${palette.success[100]}`,
             ...cStyles.noneUserSelect,
             '&>:first-child': {
                 display: 'flex',
@@ -84,19 +83,19 @@ export const styles = theme => {
             width: 32,
             height: 32,
             borderRadius: '50%',
-            backgroundColor: toRgbA(primary.main, 0.05),
+            backgroundColor: palette.primary[50],
             cursor: 'pointer',
-            border: `1px solid ${colors.bgColor}`,
+            border: `1px solid ${palette.background.default}`,
             boxSizing: 'border-box',
             '&:hover': {
-                border: `1px solid ${colors.primary}`
+                border: `1px solid ${palette.primary.main}`
             },
             '&.normalDrawer': {
                 top: 18,
                 right: 0,
                 position: 'fixed',
-                backgroundColor: common.black,
-                border: `1px solid ${common.black}`,
+                backgroundColor: palette.common.black,
+                border: `1px solid ${palette.common.black}`,
             },
         },
         hide: {

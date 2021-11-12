@@ -75,11 +75,17 @@ export const styles = ({ palette }) => {
             ...cStyles.noneUserSelect,
             borderWidth: 1,
             borderStyle: 'solid',
+            ...getTransitionStyle('all .25s'),
+            '&.overlay': {
+                borderColor: palette.white.main + '!important',
+            },
             '&.bgGreen': {
+                borderColor: palette.primary.main,
                 background: linearGradients.green,
             },
             '&.bgPrimary': {
                 background: linearGradients.main,
+                borderColor: palette.info.main + '!important',
             },
         },
         boxSubMenu: {

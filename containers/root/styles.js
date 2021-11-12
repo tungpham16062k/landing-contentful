@@ -1,4 +1,4 @@
-export const styles = theme => ({
+export const styles = ({ palette }) => ({
     wrapper: {
         height: '100vh',
         width: '100vw',
@@ -6,8 +6,8 @@ export const styles = theme => ({
         flexDirection: 'column',
         overflow: 'hidden',
         fontSize: 15,
-        color: theme.palette.text.primary,
-        background: theme.palette.background.input,
+        color: palette.text.primary,
+        background: palette.background.input,
         '&.center': {
             alignItems: 'center',
             justifyContent: 'center',

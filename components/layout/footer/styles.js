@@ -1,12 +1,11 @@
 import { borderRadiuses, fontWeights } from "@styles/theme";
 
-export const styles = theme => {
-    const { primary, info, common } = theme.palette;
+export const styles = ({ palette, breakpoints }) => {
     return {
         wrapper: {
             display: 'flex',
             justifyContent: 'center',
-            backgroundColor: common.white,
+            backgroundColor: palette.common.white,
             boxSizing: 'border-box',
         },
         container: {
@@ -16,10 +15,10 @@ export const styles = theme => {
             height: 470,
             boxSizing: 'border-box',
             padding: '48px 0 16px',
-            borderTop: `1px solid ${info[100]}`,
+            borderTop: `1px solid ${palette.info[100]}`,
             margin: '0 24px',
             justifyContent: 'space-between',
-            [theme.breakpoints.down('lg')]: {
+            [breakpoints.down('lg')]: {
                 height: 'fit-content',
             },
         },
@@ -34,7 +33,7 @@ export const styles = theme => {
             position: 'relative',
             '&>:last-child': {
                 height: 40,
-                marginLeft: 16, 
+                marginLeft: 16,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -70,7 +69,7 @@ export const styles = theme => {
                 width: 36,
                 height: 36,
                 borderRadius: borderRadiuses.big,
-                backgroundColor: primary[100],
+                backgroundColor: palette.primary[100],
                 marginRight: 8,
             },
         },
@@ -82,7 +81,7 @@ export const styles = theme => {
             },
         },
         boxRight: {
-            [theme.breakpoints.down('lg')]: {
+            [breakpoints.down('lg')]: {
                 paddingBottom: 32,
             },
         },

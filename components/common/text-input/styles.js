@@ -1,35 +1,32 @@
 import { getTransitionStyle } from '@utils/StyleUtils';
 
-import { cStyles, fontWeights } from '@styles/theme';
+import { fontWeights } from '@styles/theme';
 
-export const styles = theme => ({
+export const styles = ({ palette }) => ({
     wrapper: {
         padding: '12px 16px',
         borderRadius: '6px',
-        background: theme.palette.background.input,
-        border: `1px solid ${theme.palette.info[100]}`,
+        background: palette.background.input,
+        border: `1px solid ${palette.info[100]}`,
         ...getTransitionStyle('border .15s'),
         '&:hover': {
-            border: `1px solid ${theme.palette.primary.main}`,
+            border: `1px solid ${palette.primary.main}`,
         },
     },
     label: {
         display: 'flex',
         marginBottom: 8,
         fontSize: 12,
-        color: theme.palette.text.primary,
-        // '&>span': {
-        //     ...cStyles.textEllipsis,
-        // },
+        color: palette.text.primary,
         '&.error': {
-            color: theme.palette.error.main,
+            color: palette.error.main,
         },
         '&:not(.error)': {
             fontWeight: fontWeights.bold,
         },
         '& .required': {
             marginLeft: 4,
-            color: theme.palette.error.main,
+            color: palette.error.main,
         },
     },
     container: {
@@ -44,10 +41,10 @@ export const styles = theme => ({
         outline: 'none',
         background: 'none',
         '&::placeholder': {
-            color: theme.palette.text.plh,
+            color: palette.text.plh,
         },
         '&::-webkit-input-placeholder': { /* Edge */
-            color: theme.palette.text.plh,
+            color: palette.text.plh,
         },
     },
 });

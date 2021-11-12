@@ -11,7 +11,7 @@ import { ImageViewer } from '@components/common';
 import { Grid } from '@mui/material';
 
 const icons = {
-    dakenh: require('@assets/images/common/dakenh.png'),
+    socialPreview: require('@assets/images/common/img_social_preview.png'),
     dlCall: require('@assets/images/common/dialog_call.png'),
     menu: require('@assets/images/common/menu.png'),
     filter: require('@assets/images/common/customer_filter.png'),
@@ -26,7 +26,7 @@ const icons = {
     secSix5: require('@assets/images/common/globus.png'),
     secSix6: require('@assets/images/common/Paragon_Sin.png'),
     secSix7: require('@assets/images/common/xstrahl.png'),
-}
+};
 
 const secTwoOpts = [
     {
@@ -164,7 +164,7 @@ class HomePage extends Component {
                 <div className={classNames(classes.container, classes.secOneContent)}>
                     <h1>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</h1>
                     <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
-                    <div className={classes.boxCustomImg}><ImageViewer src={icons.dakenh} /></div>
+                    <div className={classes.boxCustomImg}><ImageViewer src={icons.socialPreview} /></div>
                 </div>
             </div>
         );

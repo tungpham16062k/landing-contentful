@@ -31,9 +31,9 @@ const icons = {
 };
 
 const logos = {
-    circleColor: require('@assets/images/logo/logo_circle_color.svg'),
+    circleColor: require('@assets/images/logo/logo_circle_main.svg'),
     circleWhite: require('@assets/images/logo/logo_circle_white.svg'),
-    fullColor: require('@assets/images/logo/logo_full_color.svg'),
+    fullColor: require('@assets/images/logo/logo_full_main.svg'),
     fullWhite: require('@assets/images/logo/logo_full_white.svg'),
 };
 
@@ -146,10 +146,10 @@ const Header = ({ classes, i18n }) => {
                                         target={item.target}
                                     />
                                 ))}
-                                <div style={{ borderColor: isOverlay ? 'white' : '#00898E' }} className={classNames(classes.navBtn, 'bgGreen', { 'colorW': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/register')}>
+                                <div className={classNames(classes.navBtn, 'bgGreen', { 'overlay': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/register')}>
                                     Đăng ký
                                 </div>
-                                <div style={{ borderColor: isOverlay ? '#1468ee' : 'white' }} className={classNames(classes.navBtn, { 'bgPrimary': isOverlay, 'colorW': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/')}>
+                                <div className={classNames(classes.navBtn, { 'bgPrimary': isOverlay, 'overlay': !isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/')}>
                                     Đăng nhập
                                 </div>
                                 <div><ImageViewer src={icons.vn} style={{ height: 20, marginLeft: 24, objectFit: 'contain' }} /></div>

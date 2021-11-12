@@ -1,8 +1,6 @@
 import { cStyles, borderRadiuses, fontWeights, linearGradients } from '@styles/theme';
-import { getTransitionStyle } from '@utils/StyleUtils';
 
-export const styles = theme => {
-    const { primary, background, info, success, common } = theme.palette;
+export const styles = ({ palette, breakpoints }) => {
     return {
         wrapper: {
             width: '100%',
@@ -15,7 +13,7 @@ export const styles = theme => {
             height: 'auto',
             margin: '0 auto',
             boxSizing: 'border-box',
-            [theme.breakpoints.down('lg')]: {
+            [breakpoints.down('lg')]: {
                 margin: '0 24px',
             },
         },
@@ -29,10 +27,10 @@ export const styles = theme => {
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
-            background: linearGradients.main,
+            background: palette.primary.main,
         },
         secOneContent: {
-            color: common.white,
+            color: palette.common.white,
             '&>:first-child': {
                 fontSize: 32,
                 fontWeight: fontWeights.bold,
@@ -58,8 +56,8 @@ export const styles = theme => {
         },
         boxCustomImg: {
             marginBottom: -120,
-            backgroundColor: common.white,
-            border: `8px solid ${common.white}`,
+            backgroundColor: palette.common.white,
+            border: `8px solid ${palette.common.white}`,
             borderRadius: '16px 16px 0 0',
             '& img': {
                 borderRadius: '6px 6px 0 0',
@@ -72,7 +70,7 @@ export const styles = theme => {
             justifyContent: 'center',
             width: '100%',
             padding: '78px 0',
-            backgroundColor: background.input,
+            backgroundColor: palette.background.input,
             overflow: 'hidden',
         },
         secTwoContent: {
@@ -97,7 +95,7 @@ export const styles = theme => {
                 '&>:first-child': {
                     width: 8,
                     height: 8,
-                    backgroundColor: success.main,
+                    backgroundColor: palette.success.main,
                     borderRadius: '50%',
                     marginRight: 8,
                 },
@@ -113,7 +111,7 @@ export const styles = theme => {
             justifyContent: 'center',
             width: '100%',
             padding: '72px 0 137px',
-            backgroundColor: background.input,
+            backgroundColor: palette.background.input,
             overflow: 'hidden',
         },
         secThreeContent: {
@@ -147,7 +145,7 @@ export const styles = theme => {
                 '&>:first-child': {
                     width: 6,
                     height: 24,
-                    backgroundColor: success.main,
+                    backgroundColor: palette.success.main,
                     borderRadius: 20,
                     marginRight: 8,
                 },
@@ -169,7 +167,7 @@ export const styles = theme => {
             paddingLeft: 24,
             width: 217,
             height: 119,
-            backgroundColor: common.white,
+            backgroundColor: palette.common.white,
             borderRadius: borderRadiuses.big,
             marginRight: 38,
             cursor: 'pointer',
@@ -184,18 +182,18 @@ export const styles = theme => {
             '&.custom': {
                 position: 'relative',
                 left: -39,
-                [theme.breakpoints.down('lg')]: {
+                [breakpoints.down('lg')]: {
                     left: -26,
                 },
-                [theme.breakpoints.down(1200)]: {
+                [breakpoints.down(1200)]: {
                     left: 0,
                 },
             },
             '&:hover': {
-                color: common.white,
-                background: linearGradients.main,
+                color: palette.common.white,
+                background: palette.primary.main,
             },
-            [theme.breakpoints.down('md')]: {
+            [breakpoints.down('md')]: {
                 marginRight: 0,
             },
         },
@@ -206,11 +204,11 @@ export const styles = theme => {
             justifyContent: 'center',
             width: '100%',
             paddingTop: 72,
-            backgroundColor: common.white,
+            backgroundColor: palette.common.white,
             overflow: 'hidden',
         },
         secFourContent: {
-            color: primary.main,
+            color: palette.primary.main,
             height: 'auto',
             '&>:first-child': {
                 fontSize: 32,
@@ -218,7 +216,7 @@ export const styles = theme => {
                 marginBottom: 48,
             },
             '&>:nth-child(2)': {
-                borderBottom: `1px solid ${info[100]}`,
+                borderBottom: `1px solid ${palette.info[100]}`,
                 paddingBottom: 24,
                 marginBottom: 48,
                 '&>img': {
@@ -227,7 +225,7 @@ export const styles = theme => {
                     height: 36,
                 },
             },
-            [theme.breakpoints.down('md')]: {
+            [breakpoints.down('md')]: {
                 paddingBottom: 32,
             },
         },
@@ -243,8 +241,8 @@ export const styles = theme => {
             height: 671,
             boxSizing: 'border-box',
             overflow: 'hidden',
-            background: linearGradients.main,
-            [theme.breakpoints.down('md')]: {
+            background: palette.primary.main,
+            [breakpoints.down('md')]: {
                 height: 'auto',
             },
         },
@@ -253,7 +251,7 @@ export const styles = theme => {
             flexDirection: 'column',
             justifyContent: 'center',
             height: 671,
-            color: common.white,
+            color: palette.common.white,
             '&>:first-child': {
                 fontSize: 24,
                 fontWeight: fontWeights.bold,
@@ -264,7 +262,7 @@ export const styles = theme => {
                 opacity: 0.5,
                 marginBottom: 24,
             },
-            [theme.breakpoints.down('md')]: {
+            [breakpoints.down('md')]: {
                 height: 300,
             },
         },
@@ -284,7 +282,7 @@ export const styles = theme => {
             width: 'auto',
             position: 'relative',
             top: -300,
-            [theme.breakpoints.down('md')]: {
+            [breakpoints.down('md')]: {
                 marginBottom: 32,
                 top: 0,
             },
@@ -301,7 +299,7 @@ export const styles = theme => {
             flexDirection: 'column',
             flexWrap: 'wrap',
             padding: '96px 0',
-            backgroundColor: common.white,
+            backgroundColor: palette.common.white,
             overflow: 'hidden',
         },
         boxHeader: {
@@ -324,7 +322,7 @@ export const styles = theme => {
             '&>:last-child': {
                 width: 'auto',
                 height: '4px',
-                backgroundColor: primary.main,
+                backgroundColor: palette.primary.main,
                 borderRadius: 20,
                 display: 'none',
                 '&.active': {
@@ -350,12 +348,12 @@ export const styles = theme => {
             width: '100%',
             height: 120,
             borderRadius: borderRadiuses.big,
-            border: `1px solid ${info[100]}`,
-            backgroundColor: background.input,
+            border: `1px solid ${palette.info[100]}`,
+            backgroundColor: palette.background.input,
             boxSizing: 'border-box',
             cursor: 'pointer',
             '&:hover': {
-                border: `1px solid ${primary.main}`,
+                border: `1px solid ${palette.primary.main}`,
             },
             '& img': {
                 width: '40%',
@@ -386,63 +384,17 @@ export const styles = theme => {
             boxSizing: 'border-box',
             borderRadius: borderRadiuses.primary,
             cursor: 'pointer',
-            border: `1px solid ${common.white}`,
+            border: `1px solid ${palette.common.white}`,
             ...cStyles.noneUserSelect,
-            color: common.white,
+            color: palette.common.white,
             width: 'fit-content',
             background: linearGradients.green,
         },
         heightFit: {
             height: 'fit-content',
-            [theme.breakpoints.down('md')]: {
+            [breakpoints.down('md')]: {
                 marginTop: '16px !important',
             },
         },
-
-        // container: {
-        //     width: 1166,
-        //     height: '100%',
-        //     display: 'flex',
-        //     alignItems: 'center',
-        //     justifyContent: 'space-between',
-        //     borderBottom: `1px solid ${toRgbA(common.white, 0.1)}`
-        // },
-        // nav: {
-        //     display: 'flex',
-        //     alignItems: 'center',
-        // },
-        // menuItem: {
-        //     marginLeft: 24,
-        // },
-        // boxLogo: {
-        //     display: 'flex',
-        //     alignItems: 'center',
-        //     '&>:last-child': {
-        //         marginLeft: 16,
-        //         '&>:first-child': {
-        //             fontWeight: fontWeights.bold,
-        //             color: common.white,
-        //         },
-        //         '&>:last-child': {
-        //             opacity: 0.5,
-        //         },
-        //     },
-        // },
-        // btn: {
-        //     display: 'flex',
-        //     alignItems: 'center',
-        //     height: 48,
-        //     padding: '0 24px',
-        //     boxSizing: 'border-box',
-        //     marginLeft: 24,
-        //     borderRadius: borderRadiuses.primary,
-        //     cursor: 'pointer',
-        //     border: `1px solid ${common.white}`,
-        //     ...cStyles.noneUserSelect,
-        //     '&.bgGreen': {
-        //         backgroundColor: success.main,
-        //         border: `1px solid ${success.main}`,
-        //     },
-        // },
     };
 };
