@@ -1,4 +1,4 @@
-import { cStyles, borderRadiuses, fontWeights, linearGradients } from '@styles/theme';
+import { cStyles, borderRadiuses, fontWeights } from '@styles/theme';
 
 export const styles = ({ palette, breakpoints }) => {
     return {
@@ -191,7 +191,7 @@ export const styles = ({ palette, breakpoints }) => {
             },
             '&:hover': {
                 color: palette.common.white,
-                background: palette.primary.main,
+                background: palette.success.main,
             },
             [breakpoints.down('md')]: {
                 marginRight: 0,
@@ -388,7 +388,7 @@ export const styles = ({ palette, breakpoints }) => {
             ...cStyles.noneUserSelect,
             color: palette.common.white,
             width: 'fit-content',
-            background: linearGradients.green,
+            background: palette.success.main,
         },
         heightFit: {
             height: 'fit-content',

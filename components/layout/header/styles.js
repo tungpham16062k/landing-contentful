@@ -1,6 +1,6 @@
 import { getShadowStyle, getTransitionStyle, toRgbA } from '@utils/StyleUtils';
 
-import { borderRadiuses, cStyles, linearGradients } from '@styles/theme';
+import { cStyles, borderRadiuses } from '@styles/theme';
 
 export const styles = ({ palette }) => {
     const { primary, success, common } = palette;
@@ -76,16 +76,13 @@ export const styles = ({ palette }) => {
             borderWidth: 1,
             borderStyle: 'solid',
             ...getTransitionStyle('all .25s'),
-            '&.overlay': {
-                borderColor: palette.white.main + '!important',
-            },
             '&.bgGreen': {
-                borderColor: palette.primary.main,
-                background: linearGradients.green,
+                borderColor: palette.success.main,
+                background: palette.success.main,
             },
             '&.bgPrimary': {
-                background: linearGradients.main,
-                borderColor: palette.info.main + '!important',
+                background: palette.info.main,
+                borderColor: palette.info.main,
             },
         },
         boxSubMenu: {

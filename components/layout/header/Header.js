@@ -146,10 +146,10 @@ const Header = ({ classes, i18n }) => {
                                         target={item.target}
                                     />
                                 ))}
-                                <div className={classNames(classes.navBtn, 'bgGreen', { 'overlay': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/register')}>
+                                <div className={classNames(classes.navBtn, 'bgGreen')} onClick={() => window.open('https://sso.omicrm.vn/register')}>
                                     Đăng ký
                                 </div>
-                                <div className={classNames(classes.navBtn, { 'bgPrimary': isOverlay, 'overlay': !isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/')}>
+                                <div className={classNames(classes.navBtn, { 'bgPrimary': isOverlay })} onClick={() => window.open('https://sso.omicrm.vn/')}>
                                     Đăng nhập
                                 </div>
                                 <div><ImageViewer src={icons.vn} style={{ height: 20, marginLeft: 24, objectFit: 'contain' }} /></div>
