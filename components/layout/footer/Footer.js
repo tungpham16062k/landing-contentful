@@ -9,12 +9,7 @@ import { styles } from './styles';
 
 import { Grid } from '@mui/material';
 
-import ImageViewer from '@components/common/image-viewer';
-
-const logos = {
-    circleColor: require('@assets/images/logo/logo_circle_main.svg'),
-    fullColor: require('@assets/images/logo/logo_full_main.svg'),
-};
+import Logo from '@components/common/logo';
 
 const leftOpts = [
     {
@@ -57,57 +52,47 @@ const Footer = ({ classes, i18n }) => {
                 <Grid container item xs={12}>
                     <Grid item lg={7} xl={7} md={12} sm={12} xs={12} classes={{ root: classes.boxLeft }}>
                         <div>
-                            <div className={classes.boxLogo}>
-                                <div><ImageViewer src={logos.circleColor} size={40} /></div>
-                                <div>
-                                    <div><ImageViewer src={logos.fullColor} style={{ width: 100 }} /></div>
-                                    <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
-                                </div>
-                            </div>
+                            <Logo />
                             <div className={classes.boxInfo}>
-                                {
-                                    leftOpts.map((item, idx) => {
-                                        const { label, description } = item;
-                                        const firstItem = idx === 0;
-                                        return (
-                                            <div key={idx} className={classNames({ 'marT0': firstItem })}>
-                                                <div>{label}</div>
-                                                <div className={classNames({ [classes.bold]: firstItem })}>{description}</div>
-                                            </div>
-                                        );
-                                    })
-                                }
+                                {leftOpts.map((item, idx) => {
+                                    const { label, description } = item;
+                                    const firstItem = idx === 0;
+                                    return (
+                                        <div key={idx} className={classNames({ 'marT0': firstItem })}>
+                                            <div>{label}</div>
+                                            <div className={classNames({ [classes.bold]: firstItem })}>{description}</div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                             <div className={classes.boxCircle}>
-                                {
-                                    Array.from({ length: 3 }).map((_, idx) => (
-                                        <div key={idx} />
-                                    ))
-                                }
+                                {Array.from({ length: 3 }).map((_, idx) => (
+                                    <div key={idx} />
+                                ))}
                             </div>
                         </div>
                     </Grid>
                     <Grid item container lg={5} xl={5} md={12} sm={12} xs={12} className={classes.boxRight}>
-                        {
-                            rightOpts.map((item, idx) => {
-                                const { cateOpts } = item;
-                                return (
-                                    <Grid key={idx} item lg={5} xl={5} md={3} sm={12} xs={12}>
-                                        <div className={classes.boxItem}>
-                                            {
-                                                cateOpts.map((elm, index) => (
-                                                    <div key={index} className={classNames({ 'firstItem': index === 0 })}>{elm.label}</div>
-                                                ))
-                                            }
-                                        </div>
-                                    </Grid>
-                                );
-                            })
-                        }
+                        {rightOpts.map((item, idx) => {
+                            const { cateOpts } = item;
+                            return (
+                                <Grid key={idx} item lg={5} xl={5} md={3} sm={12} xs={12}>
+                                    <div className={classes.boxItem}>
+                                        {
+                                            cateOpts.map((elm, index) => (
+                                                <div key={index} className={classNames({ 'firstItem': index === 0 })}>{elm.label}</div>
+                                            ))
+                                        }
+                                    </div>
+                                </Grid>
+                            );
+                        })}
                     </Grid>
                 </Grid>
                 <Grid container item xs={12} className={classes.copyright}>
-                    <span>Copyright © 2021 OMICRM. All rights reserved.</span>
+                    <span>
+                        Copyright © 2021 OMICRM. All rights reserved.
+                    </span>
                 </Grid>
             </div>
         </div>

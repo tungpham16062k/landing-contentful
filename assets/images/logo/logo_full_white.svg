@@ -1,44 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 20">
-  <g id="Group_16458" data-name="Group 16458" transform="translate(-4041 22904)">
-    <g id="Group_16455" data-name="Group 16455" transform="translate(4081 -22904)" opacity="0.5">
-      <g id="download_1_" data-name="download (1)" transform="translate(35)">
-        <path id="Path_9697" data-name="Path 9697" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16450" data-name="Group 16450" transform="translate(0.8 1.2)">
-          <path id="Path_9698" data-name="Path 9698" d="M24.88,10.32h-3.6a.35.35,0,0,0-.36.24L16.08,22.28,11.24,10.56a.35.35,0,0,0-.36-.24H7.28a.378.378,0,0,0-.4.4v16.8a.378.378,0,0,0,.4.4h2.8a.378.378,0,0,0,.4-.4V16.72h.28l4.04,9.76a.384.384,0,0,0,.36.24h1.88a.35.35,0,0,0,.36-.24l4-9.76h.28v10.8a.378.378,0,0,0,.4.4h2.8a.378.378,0,0,0,.4-.4V10.72a.378.378,0,0,0-.4-.4Z" transform="translate(-6.88 -10.32)" fill="#fff"/>
-        </g>
-      </g>
-      <g id="download_3_" data-name="download (3)">
-        <path id="Path_9701" data-name="Path 9701" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16452" data-name="Group 16452" transform="translate(2 0.8)">
-          <path id="Path_9702" data-name="Path 9702" d="M30.029,19.28a.408.408,0,0,0-.382.284c-.559,1.62-2.123,2.516-4.137,2.516-2.935,0-4.71-2.218-4.71-6.006s1.775-5.994,4.7-5.994a4.078,4.078,0,0,1,4.184,2.9.407.407,0,0,0,.387.3s2.214,0,2.931,0a.2.2,0,0,0,.2-.226C32.73,9.468,29.511,6.88,25.5,6.88c-5.118,0-8.3,3.528-8.3,9.206s3.184,9.194,8.31,9.194c4.027,0,7.11-2.314,7.688-5.766a.2.2,0,0,0-.2-.234Z" transform="translate(-17.2 -6.88)" fill="#fff"/>
-        </g>
-      </g>
-      <g id="download_4_" data-name="download (4)" transform="translate(17.083)">
-        <path id="Path_9703" data-name="Path 9703" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16453" data-name="Group 16453" transform="translate(2.8 1.2)">
-          <path id="Path_9704" data-name="Path 9704" d="M38.434,27.333l-3.4-6.414A5.3,5.3,0,0,0,38.08,15.97c0-3.432-2.55-5.65-6.5-5.65h-7.1a.4.4,0,0,0-.4.4v16.8a.4.4,0,0,0,.4.4h2.8a.4.4,0,0,0,.4-.4v-6h3.6l3.276,6.187a.4.4,0,0,0,.354.213H38.08a.4.4,0,0,0,.354-.587ZM31.29,18.72H27.68v-5.6h3.536c2.028,0,3.264,1.067,3.264,2.806,0,1.774-1.162,2.794-3.19,2.794Z" transform="translate(-24.08 -10.32)" fill="#fff"/>
-        </g>
-      </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 32.001">
+  <g data-name="Group 18451">
+    <g data-name="Group 18443" style="opacity:.5">
+      <path data-name="Path 11358" d="m56.4 345.7 9.4 19.571 9.346-19.571h8.1v32h-6.535v-21.57l-8.567 18.33H63.4l-8.565-18.33v21.57H48.25v-32z" transform="translate(86.75 -345.705)" style="fill:#ffffff"/>
+      <path data-name="Path 11221" d="M121.666 284.588a9.686 9.686 0 0 0 0 19.368 12.006 12.006 0 0 0 8.119-3.684l4.151 4.539a18.228 18.228 0 0 1-12.626 5.618c-9.324 0-16.374-6.965-16.374-16.089 0-9.079 7.185-15.911 16.642-15.911a17.71 17.71 0 0 1 12.312 5.214l-4.105 5.034a11.265 11.265 0 0 0-8.119-4.089z" transform="translate(-30.936 -278.428)" style="fill:#ffffff"/>
+      <path data-name="Path 11245" d="m68.021 411.344-5.106-9.144h-7.4v9.144H48.25v-32h13.975c8.417 0 13.2 4.023 13.2 11.108 0 4.939-2.115 8.5-6.023 10.333l6.85 10.56zm-12.508-15.178h6.712c4 0 6.3-1.828 6.3-5.484 0-3.566-2.3-5.349-6.3-5.349h-6.712z" transform="translate(56.75 -379.344)" style="fill:#ffffff"/>
     </g>
-    <g id="Group_16456" data-name="Group 16456" transform="translate(4041 -22904)">
-      <g id="download_1_2" data-name="download (1)" transform="translate(20)">
-        <path id="Path_9697-2" data-name="Path 9697" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16450-2" data-name="Group 16450" transform="translate(0.8 1.2)">
-          <path id="Path_9698-2" data-name="Path 9698" d="M24.88,10.32h-3.6a.35.35,0,0,0-.36.24L16.08,22.28,11.24,10.56a.35.35,0,0,0-.36-.24H7.28a.378.378,0,0,0-.4.4v16.8a.378.378,0,0,0,.4.4h2.8a.378.378,0,0,0,.4-.4V16.72h.28l4.04,9.76a.384.384,0,0,0,.36.24h1.88a.35.35,0,0,0,.36-.24l4-9.76h.28v10.8a.378.378,0,0,0,.4.4h2.8a.378.378,0,0,0,.4-.4V10.72a.378.378,0,0,0-.4-.4Z" transform="translate(-6.88 -10.32)" fill="#fff"/>
-        </g>
-      </g>
-      <g id="download_2_" data-name="download (2)" transform="translate(33.75)">
-        <path id="Path_9699" data-name="Path 9699" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16451" data-name="Group 16451" transform="translate(8 1.2)">
-          <path id="Path_9700" data-name="Path 9700" d="M72,28.32H69.2a.4.4,0,0,1-.4-.4V10.72a.4.4,0,0,1,.4-.4H72a.4.4,0,0,1,.4.4v17.2A.4.4,0,0,1,72,28.32Z" transform="translate(-68.8 -10.32)" fill="#fff"/>
-        </g>
-      </g>
-      <g id="download">
-        <path id="Path_9705" data-name="Path 9705" d="M0,20V0H20V20Z" fill="none"/>
-        <g id="Group_16454" data-name="Group 16454" transform="translate(1.6 0.8)">
-          <path id="Path_9706" data-name="Path 9706" d="M22.178,6.88c-5.114,0-8.418,3.609-8.418,9.194,0,5.678,3.225,9.206,8.418,9.206,5.17,0,8.382-3.528,8.382-9.206S27.348,6.88,22.178,6.88Zm0,15.2c-2.993,0-4.817-2.35-4.817-6.006s1.87-5.994,4.817-5.994,4.783,2.328,4.783,5.994S25.125,22.08,22.177,22.08Z" transform="translate(-13.76 -6.88)" fill="#fff"/>
-        </g>
-      </g>
+    <g data-name="Group 18447">
+      <path data-name="Path 11240" d="M147.387 361.66a16 16 0 1 1-16-15.955 15.719 15.719 0 0 1 16 15.955zm-25.108 0c0 5.529 4.214 9.842 9.193 9.842s9.024-4.314 9.024-9.842-4.044-9.752-9.024-9.752a9.432 9.432 0 0 0-9.193 9.752z" transform="translate(-115.387 -345.705)" style="fill:#ffffff"/>
+      <path data-name="Path 11236" d="m56.4 345.7 9.4 19.571 9.346-19.571h8.1v32h-6.535v-21.57l-8.567 18.33H63.4l-8.565-18.33v21.57H48.25v-32z" transform="translate(-14.25 -345.705)" style="fill:#ffffff"/>
+      <path data-name="Path 11227" d="M122.485 312.067v32h-8v-32z" transform="translate(-43.484 -312.066)" style="fill:#ffffff"/>
     </g>
   </g>
 </svg>

@@ -40,28 +40,6 @@ export const styles = ({ palette }) => {
         navLink: {
             padding: '8px 12px',
         },
-        boxLogo: {
-            display: 'flex',
-            alignItems: 'center',
-            position: 'relative',
-            left: 0,
-            '&>:last-child': {
-                height: 40,
-                marginLeft: 16,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                '&>:first-child': {
-                    position: 'relative',
-                    left: -2,
-                },
-                '&>:last-child': {
-                    marginTop: 4,
-                    opacity: 0.5,
-                    fontSize: 12,
-                },
-            },
-        },
         navBtn: {
             display: 'flex',
             alignItems: 'center',

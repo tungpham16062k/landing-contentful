@@ -27,27 +27,6 @@ export const styles = ({ palette, breakpoints }) => {
             display: 'flex',
             alignItems: 'flex-end',
         },
-        boxLogo: {
-            display: 'flex',
-            alignItems: 'center',
-            position: 'relative',
-            '&>:last-child': {
-                height: 40,
-                marginLeft: 16,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                '&>:first-child': {
-                    position: 'relative',
-                    left: -2,
-                },
-                '&>:last-child': {
-                    marginTop: 4,
-                    opacity: 0.5,
-                    fontSize: 12,
-                },
-            },
-        },
         boxInfo: {
             margin: '32px 0 24px',
             '&>div': {

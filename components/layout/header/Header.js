@@ -14,6 +14,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { ImageViewer, TextButton } from '@components/common';
 import CDrawer from '@components/common/drawer/CDrawer';
+import Logo from '@components/common/logo';
 
 const menus = [
     { id: 'introduce', text: 'introduce', target: 'push' },
@@ -28,13 +29,6 @@ const icons = {
     vn: require('@assets/images/national/vietnam.png'),
     // other
     menu: require('@assets/icons/common/ic_menu_list.svg'),
-};
-
-const logos = {
-    circleColor: require('@assets/images/logo/logo_circle_main.svg'),
-    circleWhite: require('@assets/images/logo/logo_circle_white.svg'),
-    fullColor: require('@assets/images/logo/logo_full_main.svg'),
-    fullWhite: require('@assets/images/logo/logo_full_white.svg'),
 };
 
 const menusOpts = [
@@ -116,17 +110,15 @@ const Header = ({ classes, i18n }) => {
     };
 
     const _renderMenu = () => {
-        let logoStyle = isOverlay ? 'Color' : 'White';
+        let renderModeClassName = isOverlay ? 'overlay' : '';
         return (
-            <div className={classNames(classes.wrapper, 'p-sticky', { 'overlay': isOverlay })}>
+            <div className={classNames(classes.wrapper, 'p-sticky', renderModeClassName)}>
                 <div className={classes.container}>
-                    <div className={classNames(classes.boxLogo, { 'overlay': isOverlay })} onClick={handleClick('go2Home')}>
-                        <div><ImageViewer src={logos[`circle${logoStyle}`]} size={40} /></div>
-                        <div>
-                            <div><ImageViewer src={logos[`full${logoStyle}`]} style={{ width: 100 }} /></div>
-                            <div>{i18n.t('Nền tảng quản lý giao tiếp đa kênh')}</div>
-                        </div>
-                    </div>
+                    <Logo
+                        color={isOverlay ? 'color' : 'white'}
+                        className={renderModeClassName}
+                        onClick={handleClick('go2Home')}
+                    />
                     <div className={classes.navWrapper}>
                         {isShowMenu ?
                             <Fragment>
