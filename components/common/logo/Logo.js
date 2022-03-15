@@ -38,7 +38,7 @@ const styles = {
     },
     container: {
         height: 40,
-        marginLeft: 12,
+        marginLeft: 10,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
