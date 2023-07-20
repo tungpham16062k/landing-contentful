@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import compose from 'recompose/compose';
 import classNames from 'classnames';
 
@@ -7,25 +7,25 @@ import withI18n from '@hocs/I18nHocs';
 
 import { withStyles } from '@mui/styles';
 import { styles } from './styles';
-import { ImageViewer } from '@components/common';
+// import { ImageViewer } from '@components/common';
 import { Grid } from '@mui/material';
 
 const icons = {
-    socialPreview: require('@assets/images/common/img_social_preview.png'),
-    dlCall: require('@assets/images/common/dialog_call.png'),
-    menu: require('@assets/images/common/menu.png'),
-    filter: require('@assets/images/common/customer_filter.png'),
-    ggPlay: require('@assets/images/common/gg_play.png'),
-    appStore: require('@assets/images/common/app_store.png'),
-    mobile: require('@assets/images/common/mobile.png'),
-    secSix0: require('@assets/images/common/25_fit.png'),
-    secSix1: require('@assets/images/common/ecoe.png'),
-    secSix2: require('@assets/images/common/viettel.png'),
-    secSix3: require('@assets/images/common/vihat.png'),
-    secSix4: require('@assets/images/common/Paragon.png'),
-    secSix5: require('@assets/images/common/globus.png'),
-    secSix6: require('@assets/images/common/Paragon_Sin.png'),
-    secSix7: require('@assets/images/common/xstrahl.png'),
+    // socialPreview: require('@assets/images/common/img_social_preview.png'),
+    // dlCall: require('@assets/images/common/dialog_call.png'),
+    // menu: require('@assets/images/common/menu.png'),
+    // filter: require('@assets/images/common/customer_filter.png'),
+    // ggPlay: require('@assets/images/common/gg_play.png'),
+    // appStore: require('@assets/images/common/app_store.png'),
+    // mobile: require('@assets/images/common/mobile.png'),
+    // secSix0: require('@assets/images/common/25_fit.png'),
+    // secSix1: require('@assets/images/common/ecoe.png'),
+    // secSix2: require('@assets/images/common/viettel.png'),
+    // secSix3: require('@assets/images/common/vihat.png'),
+    // secSix4: require('@assets/images/common/Paragon.png'),
+    // secSix5: require('@assets/images/common/globus.png'),
+    // secSix6: require('@assets/images/common/Paragon_Sin.png'),
+    // secSix7: require('@assets/images/common/xstrahl.png'),
 };
 
 const secTwoOpts = [
@@ -164,7 +164,7 @@ class HomePage extends Component {
                 <div className={classNames(classes.container, classes.secOneContent)}>
                     <h1>{i18n.t('Giải pháp quản trị và chăm sóc khách hàng toàn diện')}</h1>
                     <div>{i18n.t('Tối ưu chi phí vận hành kết hợp với hệ thống tổng đài chuyên nghiệp')}</div>
-                    <div className={classes.boxCustomImg}><ImageViewer src={icons.socialPreview} /></div>
+                    {/* <div className={classes.boxCustomImg}><ImageViewer src={icons.socialPreview} /></div> */}
                 </div>
             </div>
         );
@@ -179,7 +179,7 @@ class HomePage extends Component {
                     <div>{i18n.t('Tổng đài ảo chuyên nghiệp và thông minh')}</div>
                     <Grid container>
                         <Grid item xs={12} md={5}>
-                            <ImageViewer src={icons.dlCall} className={classes.dlImg} />
+                            {/* <ImageViewer src={icons.dlCall} className={classes.dlImg} /> */}
                         </Grid>
                         <Grid container spacing={4} item xs={12} md={7} className={classes.heightFit}>
                             {
@@ -260,10 +260,10 @@ class HomePage extends Component {
             <div className={classes.boxSecFour}>
                 <div className={classNames(classes.container, classes.secFourContent)}>
                     <div>{i18n.t('Có gì ở OMICRM?')}</div>
-                    <div><ImageViewer src={icons.menu} /></div>
+                    {/* <div><ImageViewer src={icons.menu} /></div> */}
                     <Grid container>
                         <Grid item xs={12} md={6} className={classes.boxDlImg}>
-                            <ImageViewer src={icons.filter} className={classes.dlImg} />
+                            {/* <ImageViewer src={icons.filter} className={classes.dlImg} /> */}
                         </Grid>
                         <Grid container spacing={4} item xs={12} md={6} className={classes.heightFit}>
                             <Grid item xs={12}><span className={classes.caption}>{i18n.t('Quản lý khách hàng')}</span></Grid>
@@ -299,14 +299,14 @@ class HomePage extends Component {
                                 <div>{i18n.t('Sử dụng OMICRM trên điện thoại')}</div>
                                 <div>{i18n.t('Mang tổng đài đi khắp mọi nơi chỉ với 1 chiếc SmartPhone')}</div>
                                 <div className={classes.boxFiveImg}>
-                                    <ImageViewer src={icons.ggPlay} />
-                                    <ImageViewer src={icons.appStore} />
+                                    {/* <ImageViewer src={icons.ggPlay} /> */}
+                                    {/* <ImageViewer src={icons.appStore} /> */}
                                 </div>
                             </div>
                         </Grid>
                         <Grid container item xs={12} sm={12} md={7} className={classes.heightFit}>
                             <div className={classes.boxRightFive}>
-                                <ImageViewer src={icons.mobile} />
+                                {/* <ImageViewer src={icons.mobile} /> */}
                             </div>
                         </Grid>
                     </Grid>
@@ -342,7 +342,10 @@ class HomePage extends Component {
                         {
                             Array.from({ length: 8 }).map((_, idx) => {
                                 return (
-                                    <div key={idx} className={classes.boxItemSix}><ImageViewer src={icons[`secSix${idx}`]} /></div>
+                                    <Fragment>
+
+                                    </Fragment>
+                                    // <div key={idx} className={classes.boxItemSix}><ImageViewer src={icons[`secSix${idx}`]} /></div>
                                 );
                             })
                         }

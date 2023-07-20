@@ -8,8 +8,8 @@ import { getSvgStyle, getClassName, getColor } from '@utils/StyleUtils';
 
 import { cStyles, imgSizes } from '@styles/theme';
 
-import ImgDefaultError from '@assets/images/common/img_error.png';
-
+// import ImgDefaultError from '@assets/images/common/img_error.png';
+let ImgDefaultError = null
 class ImageViewer extends Component {
 
     constructor(props) {

@@ -26,7 +26,7 @@ const menus = [
 
 const icons = {
     // lng flag
-    vn: require('@assets/images/national/vietnam.png'),
+    // vn: require('@assets/images/national/vietnam.png'),
     // other
     // menu: require('@assets/icons/common/ic_menu_list.svg'),
 };
@@ -122,7 +122,7 @@ const Header = ({ classes, i18n }) => {
                     <div className={classes.navWrapper}>
                         {isShowMenu ?
                             <Fragment>
-                                <div><ImageViewer src={icons.vn} size={20} className={classes.btnChangeLgn} /></div>
+                                {/* <div><ImageViewer src={icons.vn} size={20} className={classes.btnChangeLgn} /></div> */}
                                 <ImageViewer onClick={() => toggleShow('drawer', true)} src={icons.menu} size={20} svg={{ color: isOverlay ? 'primary' : 'white' }} />
                             </Fragment>
                             :
