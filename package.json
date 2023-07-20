@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start -p 7071",
     "prod": "next build && next start -p 7071",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "setup": "node ./contentful/setup.js"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.4.0",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@moxy/next-common-files": "^2.0.0",
@@ -42,6 +44,7 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
+    "contentful-import": "^8.5.62",
     "webpack": "^5.70.0"
   }
 }
