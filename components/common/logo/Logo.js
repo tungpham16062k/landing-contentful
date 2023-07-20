@@ -3,7 +3,7 @@ import React from 'react';
 import { i18nText } from '@libs/i18n';
 
 import ImageViewer from '../image-viewer';
-
+// dwqdwq
 const logos = {
     color: [
         // require('@assets/images/logo/logo_circle_main.svg'),
