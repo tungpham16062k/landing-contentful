@@ -6,21 +6,21 @@ import ImageViewer from '../image-viewer';
 
 const logos = {
     color: [
-        require('@assets/images/logo/logo_circle_main.svg'),
-        require('@assets/images/logo/logo_full_main.svg'),
+        // require('@assets/images/logo/logo_circle_main.svg'),
+        // require('@assets/images/logo/logo_full_main.svg'),
     ],
     white: [
-        require('@assets/images/logo/logo_circle_white.svg'),
-        require('@assets/images/logo/logo_full_white.svg'),
+        // require('@assets/images/logo/logo_circle_white.svg'),
+        // require('@assets/images/logo/logo_full_white.svg'),
     ],
 };
 
 const Logo = ({ className, onClick, color = 'color' }) => {
     return (
         <div style={styles.wrapper} {...{ className, onClick }}>
-            <ImageViewer src={logos[color][0]} size={40} svg />
+            {/* <ImageViewer src={logos[color][0]} size={40} svg /> */}
             <div style={styles.container}>
-                <ImageViewer src={logos[color][1]} style={{ height: 20, width: 'auto' }} svg />
+                {/* <ImageViewer src={logos[color][1]} style={{ height: 20, width: 'auto' }} svg /> */}
                 <span style={styles.text}>
                     {i18nText('Nền tảng quản lý giao tiếp đa kênh')}
                 </span>

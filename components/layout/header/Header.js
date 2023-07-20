@@ -28,7 +28,7 @@ const icons = {
     // lng flag
     vn: require('@assets/images/national/vietnam.png'),
     // other
-    menu: require('@assets/icons/common/ic_menu_list.svg'),
+    // menu: require('@assets/icons/common/ic_menu_list.svg'),
 };
 
 const menusOpts = [
@@ -96,7 +96,7 @@ const Header = ({ classes, i18n }) => {
         return (
             <CDrawer  {...dialogProps}>
                 <div className={classes.boxSubMenu}>
-                    <ImageViewer onClick={() => toggleShow('drawer', false)} src={icons.menu} className={classes.subMenuIc} size={20} svg={{ color: 'primary' }} />
+                    {/* <ImageViewer onClick={() => toggleShow('drawer', false)} src={icons.menu} className={classes.subMenuIc} size={20} svg={{ color: 'primary' }} /> */}
                     {menusOpts.map((item, idx) => (
                         <div
                             key={idx}

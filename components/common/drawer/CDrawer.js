@@ -22,7 +22,7 @@ import Drawer from '@mui/material/Drawer';
 import ImageViewer from '@components/common/image-viewer';
 
 const icons = {
-    close: require('@assets/icons/common/ic_delete.svg'),
+    // close: require('@assets/icons/common/ic_delete.svg'),
 };
 
 const CDrawer = ({ classes, i18n, onAccept, onClose, open, normalDrawer, btnOpts, title, customWidth, children, hideTitle }) => {
@@ -85,7 +85,7 @@ const CDrawer = ({ classes, i18n, onAccept, onClose, open, normalDrawer, btnOpts
                         className={classNames(classes.closeIcon, { 'normalDrawer': normalDrawer })}
                         style={{ ...(normalDrawer && { right: `${customWidth + 24}px` }) }}
                         onClick={onClose}>
-                        <ImageViewer size={20} src={icons.close} svg={{ color: normalDrawer ? 'white' : 'primary' }} />
+                        {/* <ImageViewer size={20} src={icons.close} svg={{ color: normalDrawer ? 'white' : 'primary' }} /> */}
                     </div>
                 </div>
                 <div className={classNames(classes.boxContent, { 'normalDrawer': normalDrawer })}>

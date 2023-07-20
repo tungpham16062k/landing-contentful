@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 
-import '@styles/main.css';
+// import '@styles/main.css';
 import theme from '@styles/theme';
 
 import RootContainer from '@containers/root';
