@@ -2,7 +2,7 @@ FROM mhart/alpine-node:14
 
 WORKDIR /var/www/app
 
-EXPOSE 7071
+EXPOSE 3000
 
 RUN adduser -h "/home/vihatcrm" -u 2000 -D -s /bin/false "vihatcrm" \
     && apk add --update ca-certificates tzdata \

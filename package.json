@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 7071",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start -p 7071",
-    "prod": "next build && next start -p 7071",
+    "start": "next start -p 3000",
+    "prod": "next build && next start -p 3000",
     "analyze": "ANALYZE=true next build",
     "setup": "node ./contentful/setup.js"
   },
