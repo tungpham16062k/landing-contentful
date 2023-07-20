@@ -1,4 +1,4 @@
-export const WEB_PORT = 7071;
+export const WEB_PORT = 3000;
 export const requestApiTimeout = 60000;
 export const sourceVersion = 31;
 export const defaultCallHistoryCreator = 'create_default_by_tenant';
